@@ -4,3 +4,6 @@
     Message <input name="mqtt_message" type="text" ng-model="indexView.mqtt_message" required></input></br>
     <input type="submit" value="Go" ng-disabled="steup_form.$invalid"></input>
 </form>
+
+<h3>Messages Arrived</h3>
+<h4 ng-repeat="message in indexView.logs">{{message}}</h4>

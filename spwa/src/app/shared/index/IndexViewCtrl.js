@@ -11,6 +11,7 @@ function IndexViewCtrl($rootScope,mqttService) {
     vm.ip_address = $rootScope.defaultUrl;
     vm.mqtt_topic = "";
     vm.mqtt_message = "";
+    vm.logs = ["hello"];
     vm.go = go;
 
     function go(valid) {
@@ -41,7 +42,7 @@ function IndexViewCtrl($rootScope,mqttService) {
         mqttService.connect(function(){
             console.log("connected");
             mqttService.subscribe("hello");
-            mqttService.publish("hello","hello from mqtt");
+            //mqttService.publish("hello","hello from mqtt");
         });
        
     }
