@@ -28,6 +28,21 @@ function IndexViewCtrl($rootScope,mqttService) {
 
 
     function activate(){
-        mqttService.initialize("t","1");
+        console.log("connecting to mqtt");
+        //connection only works with broker.hivemq.com
+        //taken from https://github.com/mqtt/mqtt.github.io/wiki/public_brokers
+        mqttService.initialize("broker.hivemq.com",8000);
+        mqttService.onConnectionLost(function(){
+            console.log("connection lost");
+        });
+        mqttService.onMessageArrived(function(message){
+            console.log("message ",message.payloadString);
+        });
+        mqttService.connect(function(){
+            console.log("connected");
+            mqttService.subscribe("hello");
+            mqttService.publish("hello","hello from mqtt");
+        });
+       
     }
 }
