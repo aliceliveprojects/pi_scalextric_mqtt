@@ -1,0 +1,6 @@
+<form name="setup_form" ng-submit="indexView.go(setup_form.$valid)">
+    IP Address <input name="ip_address" type="text" ng-model="indexView.ip_address" required ></input></br>
+    Topic <input name="mqtt_topic" type="text" ng-model="indexView.mqtt_topic" required></input></br>
+    Message <input name="mqtt_message" type="text" ng-model="indexView.mqtt_message" required></input></br>
+    <input type="submit" value="Go" ng-disabled="steup_form.$invalid"></input>
+</form>
