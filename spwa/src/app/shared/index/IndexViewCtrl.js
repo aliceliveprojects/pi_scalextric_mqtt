@@ -2,18 +2,21 @@ angular.module('app').controller('IndexViewCtrl', IndexViewCtrl);
 
 IndexViewCtrl.$inject = [
     '$rootScope',
+    '$scope',
     'mqttService'
 ];
 
-function IndexViewCtrl($rootScope, mqttService) {
+function IndexViewCtrl($rootScope, $scope,mqttService) {
     var vm = this;
+    var count = 0;
 
     vm.ip_address = $rootScope.defaultUrl;
     vm.mqtt_topic = "";
     vm.mqtt_message = "";
-    vm.logs = "hi"
+    vm.logs = ""
     vm.subscribe = subscribe;
     vm.publish = publish;
+    vm.clear = clear;
 
     function subscribe(valid) {
         if (!valid) {
@@ -31,6 +34,10 @@ function IndexViewCtrl($rootScope, mqttService) {
         }
     }
 
+    function clear(){
+        vm.logs = "";
+    }
+
     activate();
     function activate() {
         console.log("connecting to mqtt");
@@ -42,7 +49,11 @@ function IndexViewCtrl($rootScope, mqttService) {
         });
         mqttService.onMessageArrived(function (message) {
             console.log("message arrived ", message);
-            vm.logs += (message.payloadString);
+            count += 1;
+            vm.logs += count + ") Message Arrived : " + (message.payloadString) + "   ";
+            $scope.$apply(function() {
+               
+            });
         });
         mqttService.connect(function () {
             console.log("connected");
