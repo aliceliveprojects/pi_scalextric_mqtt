@@ -11,7 +11,7 @@ function IndexViewCtrl($rootScope, mqttService) {
     vm.ip_address = $rootScope.defaultUrl;
     vm.mqtt_topic = "";
     vm.mqtt_message = "";
-    vm.logs = "hi there";
+    vm.logs = "hi"
     vm.subscribe = subscribe;
     vm.publish = publish;
 
@@ -42,8 +42,7 @@ function IndexViewCtrl($rootScope, mqttService) {
         });
         mqttService.onMessageArrived(function (message) {
             console.log("message arrived ", message);
-            vm.logs.push(message.payloadString);
-            console.log(vm.logs);
+            vm.logs += (message.payloadString);
         });
         mqttService.connect(function () {
             console.log("connected");
