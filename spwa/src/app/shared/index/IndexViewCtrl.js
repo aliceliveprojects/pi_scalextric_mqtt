@@ -2,9 +2,10 @@ angular.module('app').controller('IndexViewCtrl', IndexViewCtrl);
 
 IndexViewCtrl.$inject = [
     '$rootScope',
+    'mqttService'
 ];
 
-function IndexViewCtrl($rootScope) {
+function IndexViewCtrl($rootScope,mqttService) {
     var vm = this;
 
     vm.ip_address = $rootScope.defaultUrl;
@@ -21,5 +22,12 @@ function IndexViewCtrl($rootScope) {
             
         }
 
+    }
+
+    activate();
+
+
+    function activate(){
+        mqttService.initialize("t","1");
     }
 }
