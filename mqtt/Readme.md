@@ -3,7 +3,7 @@ Setting up Mqtt on a Raspberry Pi using Mosquitto
 
 ## Setting Mosquitto Broker
 
-*When communicating via mqtt from client side Javascript MQTT over Websockets is recommended. For Javascript there is both a pure MQTT library and the Paho in page library that uses websockets*
+*When communicating via mqtt from client side, Javascript MQTT over Websockets is recommended. However there is both a pure MQTT library and the Paho in page library that uses websockets*
 
 ### Without Websockets
 The Mosquitto Broker 1.4 comes with Raspbian Stretch. If Raspbian Jesse is being used Mosquitto can be built from source, follow this tutorial [StackExchange](https://raspberrypi.stackexchange.com/questions/80051/how-to-upgrade-mosquitto-mqtt-to-the-latest-version) or [StackExchange Archived](http://web.archive.org/web/20181213135759/https://raspberrypi.stackexchange.com/questions/80051/how-to-upgrade-mosquitto-mqtt-to-the-latest-version)
@@ -12,9 +12,11 @@ The Mosquitto Broker 1.4 comes with Raspbian Stretch. If Raspbian Jesse is being
 By default Mosquitto Broker 1.4 it not configured with websockets. Follow this tutorial to configure Mosquitto with websockets
 [Mosquitto Websocket](https://gist.github.com/smoofit/dafa493aec8d41ea057370dbfde3f3fc) or [Mosquitto Websocket Archived](http://web.archive.org/web/20181213140654/https://gist.github.com/smoofit/dafa493aec8d41ea057370dbfde3f3fc)
 
----
 
-*The broker start automatically on boot, to stop the broker sudo /etc/init.d/mosquitto stop & to start sudo /etc/init.d/mosquitto start* 
+
+*The broker starts automatically on boot, to stop the broker sudo /etc/init.d/mosquitto stop & to start sudo /etc/init.d/mosquitto start* 
+
+---
 
 ## Node Red
 
