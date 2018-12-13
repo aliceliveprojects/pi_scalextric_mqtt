@@ -1,9 +1,11 @@
 <form name="setup_form">
     IP Address <input name="ip_address" type="text" ng-model="indexView.ip_address" required address></input></br>
+    Port <input name="port" type="text" ng-model="indexView.port"></input></br>
     Topic <input name="mqtt_topic" type="text" ng-model="indexView.mqtt_topic" required></input></br>
     Message <input name="mqtt_message" type="text" ng-model="indexView.mqtt_message"></input></br>
-    <input type="button" value="Subscribe" ng-click="indexView.subscribe(setup_form.$valid)" ng-disabled="steup_form.$invalid"></input>
-    <input type="button" value="publish" ng-click="indexView.publish(setup_form.$valid)" ng-disabled="steup_form.$invalid"></input>
+    <input type="button" value="connect" ng-click="indexView.connect()"></input>
+    <input type="button" value="subscribe" ng-click="indexView.subscribe(setup_form.$valid)" ng-disabled="setup_form.$invalid"></input>
+    <input type="button" value="publish" ng-click="indexView.publish(setup_form.$valid)" ng-disabled="setup_form.$invalid"></input>
 </form>
 
 <h3>Messages Arrived</h3>

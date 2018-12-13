@@ -40,4 +40,5 @@ run.$inject = [
 function run($rootScope) {
     console.log('version 1.0.0');
     $rootScope.defaultUrl = '192.168.1.102';
+    $rootScope.defaultPort = '9001';
 }

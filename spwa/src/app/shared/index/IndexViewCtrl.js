@@ -6,16 +6,18 @@ IndexViewCtrl.$inject = [
     'mqttService'
 ];
 
-function IndexViewCtrl($rootScope, $scope,mqttService) {
+function IndexViewCtrl($rootScope, $scope, mqttService) {
     var vm = this;
     var count = 0;
 
     vm.ip_address = $rootScope.defaultUrl;
+    vm.port = $rootScope.defaultPort;
     vm.mqtt_topic = "";
     vm.mqtt_message = "";
     vm.logs = ""
     vm.subscribe = subscribe;
     vm.publish = publish;
+    vm.connect = connect;
     vm.clear = clear;
 
     function subscribe(valid) {
@@ -30,20 +32,18 @@ function IndexViewCtrl($rootScope, $scope,mqttService) {
         if (!valid || !vm.mqtt_message) {
             alert("Invalid Details")
         } else {
-            mqttService.publish(vm.mqtt_topic,vm.mqtt_message);
+            mqttService.publish(vm.mqtt_topic, vm.mqtt_message);
         }
     }
 
-    function clear(){
+    function clear() {
         vm.logs = "";
     }
 
-    activate();
-    function activate() {
+    function connect() {
         console.log("connecting to mqtt");
-        //connection only works with broker.hivemq.com
-        //taken from https://github.com/mqtt/mqtt.github.io/wiki/public_brokers
-        mqttService.initialize("broker.hivemq.com", 8000);
+
+        mqttService.initialize(vm.ip_address,vm.port);
         mqttService.onConnectionLost(function () {
             console.error("connection lost");
         });
@@ -51,12 +51,14 @@ function IndexViewCtrl($rootScope, $scope,mqttService) {
             console.log("message arrived ", message);
             count += 1;
             vm.logs += count + ") Message Arrived : " + (message.payloadString) + "   ";
-            $scope.$apply(function() {
-               
+            $scope.$apply(function () {
+
             });
         });
         mqttService.connect(function () {
             console.log("connected");
         });
     }
+
+
 }
