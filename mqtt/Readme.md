@@ -1,5 +1,5 @@
 # pi_scalextric_mqtt
-Setting up Mqtt
+Setting up Mqtt on a Raspberry Pi using Mosquitto
 
 ## Setting Mosquitto Broker
 
