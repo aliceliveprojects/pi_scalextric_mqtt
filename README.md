@@ -1,7 +1,7 @@
 # pi_scalextric_mqtt
 Simple application testing MQTT using a Node-Red and a Single Page Web Application (SPWA)
 
-- [Mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/mqtt/README.md)
+- [Mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt)
 - [SPWA](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/spwa/src/README.md)
 
 ## Setting Http Server
