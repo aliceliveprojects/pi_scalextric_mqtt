@@ -2,7 +2,7 @@
 Simple application testing MQTT using a Node-Red and a Single Page Web Application (SPWA)
 
 - [Mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt)
-- [SPWA](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/spwa/src/README.md)
+- [SPWA](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/spwa/src)
 
 ## Setting Http Server
 Setting up Raspberry Pi to serve a SPWA
