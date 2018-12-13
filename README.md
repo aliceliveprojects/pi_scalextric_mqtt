@@ -11,5 +11,21 @@ The Raspberry Pi ip address should be : ```192.168.1.3```
 
 The Raspberry Pi routers address should be : ```192.168.1.1```
 
-Either follow the intructions below or from [Raspberry Pi Org](https://www.raspberrypi.org/learning/networking-lessons/rpi-static-ip-address/) or [Raspberry Pi Org Archived](http://web.archive.org/web/20181213192602/https://www.raspberrypi.org/learning/networking-lessons/rpi-static-ip-address/)
+To configure a static ip either follow the intructions below or from [Raspberry Pi Org](https://www.raspberrypi.org/learning/networking-lessons/rpi-static-ip-address/) or [Raspberry Pi Org Archived](http://web.archive.org/web/20181213192602/https://www.raspberrypi.org/learning/networking-lessons/rpi-static-ip-address/)
+
+Open a terminal and type ```sudo nano /etc/dhcpcd.conf``` and append this to the bottom of the script
+
+```
+interface eth0
+
+static ip_address=192.168.1.3/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.0.1
+
+interface wlan0
+
+static ip_address=192.168.1.3/24
+static routers=192.168.1.1
+static domain_name_servers=192.168.0.1
+```
 
