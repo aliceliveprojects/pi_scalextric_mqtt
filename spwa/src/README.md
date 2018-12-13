@@ -10,6 +10,8 @@ I recommend looking at the [public_brokers list](https://github.com/mqtt/mqtt.gi
 
 Using ```broker.hivemq.com``` running on port ```8000```(Websockets) works well (must use websocket ports).
 
+---
+
 **Install packages ```npm install```**
 
 **To run ```node server.js```**
