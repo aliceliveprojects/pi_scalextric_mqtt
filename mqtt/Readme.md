@@ -12,7 +12,9 @@ The Mosquitto Broker 1.4 comes with Raspbian Stretch. If Raspbian Jesse is being
 By default Mosquitto Broker 1.4 it not configured with websockets. Follow this tutorial to configure Mosquitto with websockets
 [Mosquitto Websocket](https://gist.github.com/smoofit/dafa493aec8d41ea057370dbfde3f3fc) or [Mosquitto Websocket Archived](http://web.archive.org/web/20181213140654/https://gist.github.com/smoofit/dafa493aec8d41ea057370dbfde3f3fc)
 
+---
 
+*The broker start automatically on boot, to stop the broker sudo /etc/init.d/mosquitto stop & to start sudo /etc/init.d/mosquitto start* 
 
 ## Node Red
 
