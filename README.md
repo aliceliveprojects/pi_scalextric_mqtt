@@ -32,6 +32,8 @@ static routers=192.168.1.1
 static domain_name_servers=192.168.0.1
 ```
 
+*If another ip address is being used, the default ip address needs to be changed within the SPWA located in app.js*
+
 ---
 
 ### Http Server
