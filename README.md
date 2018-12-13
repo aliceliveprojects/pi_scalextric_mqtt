@@ -42,7 +42,7 @@ static domain_name_servers=192.168.0.1
 ### Http Server
 Once a static ip has been configured, a http server can be deployed.
 
-**Install nodejs and nmp ```sudo apt-get install nodejs npm```**
+**Install nodejs and npm ```sudo apt-get install nodejs npm```**
 
 Once nodejs and npm are installed we will need the http-server package. 
 
