@@ -50,3 +50,5 @@ Once nodejs and npm are installed we will need the http-server package.
 
 Start the server ```http-server --cors```
 
+*To run on https read https://digitallabs.mmu.ac.uk/taming-the-urban-wild/#more-1657*
+
