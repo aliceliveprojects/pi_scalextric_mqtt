@@ -32,6 +32,8 @@ static routers=192.168.1.1
 static domain_name_servers=192.168.0.1
 ```
 
+---
+
 ### Http Server
 Once a static ip has been configured, a http server can be deployed.
 
