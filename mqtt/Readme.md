@@ -15,5 +15,16 @@ By default Mosquitto Broker 1.4 it not configured with websockets. Follow this t
 
 
 ## Node Red
+
+Node-Red flow that publishes and subscribes to a single topic
+
+### Node-Red Flow
+
+To import a Node-Red flow simple navigate ```Menu > Import > Clipboard``` and copy and paste the flow below
+
+```
+
 [{"id":"49b63d55.4ba564","type":"tab","label":"Example Mqtt ","disabled":false,"info":"Example mqtt subscribe and publish flow"},{"id":"91abdb37.974d18","type":"inject","z":"49b63d55.4ba564","name":"","topic":"","payload":"Hi there","payloadType":"str","repeat":"","crontab":"","once":false,"onceDelay":0.1,"x":130,"y":120,"wires":[["b00c673f.95bed8"]]},{"id":"a00b3493.851bb8","type":"mqtt in","z":"49b63d55.4ba564","name":"Subscribe to Example Topic","topic":"Example","qos":"2","broker":"34498743.f24228","x":500,"y":120,"wires":[["f2834f34.b2639"]]},{"id":"b00c673f.95bed8","type":"mqtt out","z":"49b63d55.4ba564","name":"Publish to Example Topic","topic":"Example","qos":"","retain":"","broker":"34498743.f24228","x":190,"y":160,"wires":[]},{"id":"f2834f34.b2639","type":"debug","z":"49b63d55.4ba564","name":"","active":true,"tosidebar":true,"console":false,"tostatus":false,"complete":"payload","x":450,"y":180,"wires":[]},{"id":"eb8a57c.e5323a8","type":"comment","z":"49b63d55.4ba564","name":"Publish Message to Topic","info":"","x":190,"y":80,"wires":[]},{"id":"9e66e1e.727a72","type":"comment","z":"49b63d55.4ba564","name":"Subscribe to Topic","info":"","x":470,"y":80,"wires":[]},{"id":"34498743.f24228","type":"mqtt-broker","z":"","name":"","broker":"localhost","port":"1883","clientid":"","usetls":false,"compatmode":true,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""}]
+
+```
 
