@@ -35,4 +35,4 @@ Once a static ip has been configured, http can be deployed.
 Before we begin, if not already you will need nodejs and npm. To install simply run ```sudo apt-get install nodejs npm```
 
 Once nodejs and npm are installed we will need the http-server package. To install run ```sudo npm install http-server -g```,
-cd into the 
+cd into the SPWA src folder and run ```http-server --cors``` to start the server 
