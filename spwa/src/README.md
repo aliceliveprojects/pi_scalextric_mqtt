@@ -12,6 +12,8 @@ Using ```broker.hivemq.com``` running on port ```8000```(Websockets) works well 
 
 ---
 
+To deploy the SPWA :
+
 **Install packages ```npm install```**
 
 **To run ```node server.js```**
