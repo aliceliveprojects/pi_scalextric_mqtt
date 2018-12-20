@@ -1,6 +1,9 @@
 # pi_scalextric_mqtt
 Simple application testing MQTT using a Node-Red and a Single Page Web Application (SPWA)
 
+- [Mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt)
+- [SPWA](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/spwa/src)
+
 ## Setting Http Server
 Setting up Raspberry Pi to serve a SPWA
 
@@ -39,11 +42,13 @@ static domain_name_servers=192.168.0.1
 ### Http Server
 Once a static ip has been configured, a http server can be deployed.
 
-**Install nodejs and nmp ```sudo apt-get install nodejs npm```**
+**Install nodejs and npm ```sudo apt-get install nodejs npm```**
 
 Once nodejs and npm are installed we will need the http-server package. 
 
 **Install http-server ```sudo npm install http-server -g```**
 
 Start the server ```http-server --cors```
+
+*To run on https read https://digitallabs.mmu.ac.uk/taming-the-urban-wild/#more-1657*
 
