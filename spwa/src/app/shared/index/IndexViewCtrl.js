@@ -21,7 +21,7 @@ function IndexViewCtrl($rootScope, $scope, mqttService) {
     vm.subscribe = subscribe;
     vm.publish = publish;
     vm.connect = connect;
-    
+
     vm.clear = clear;
 
     function subscribe(valid) {
@@ -60,7 +60,7 @@ function IndexViewCtrl($rootScope, $scope, mqttService) {
             });
         });
         mqttService.connect(function () {
-            console.log("connected");
+            alert("Connected to " + vm.ip_address);
         });
     }
 
