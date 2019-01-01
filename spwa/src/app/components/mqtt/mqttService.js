@@ -30,19 +30,19 @@ function mqttService($rootScope) {
 
     //connect to the mqtt broker
     function connect(callback) {
-        if (client == null) { throw new Error("Need to Initialize Mqtt") }
+        if (!client) { throw new Error("Need to Initialize Mqtt") }
         client.connect({onSuccess:callback});
     }
 
     //subscribe to a mqtt topic, when message arrives client.onMessageArrived is called
     function subscribe(topic) {
-        if (client == null) { throw new Error("Need to Initialize Mqtt")}
+        if (!client) { throw new Error("Need to Initialize Mqtt")}
         client.subscribe(topic)
     }
 
     //publish mqtt message
     function publish(topic,message){
-        if (client == null) { throw new Error("Need to Initialize Mqtt")}
+        if (!client) { throw new Error("Need to Initialize Mqtt")}
         var mqtt_message = new Paho.MQTT.Message(message);
         mqtt_message.destinationName = topic;
         client.send(mqtt_message);
@@ -50,13 +50,13 @@ function mqttService($rootScope) {
 
     //called when connection is lost
     function onConnectionLost(callback) {
-        if (client == null) { throw new Error("Need to Initialize Mqtt") }
+        if (!client) { throw new Error("Need to Initialize Mqtt") }
         client.onConnectionLost = callback;
     }
 
     // called when a message arrives
     function onMessageArrived(callback) {
-        if (client == null) { throw new Error("Need to Initialize Mqtt") }
+        if (!client) { throw new Error("Need to Initialize Mqtt") }
         client.onMessageArrived = callback;
     }
 
