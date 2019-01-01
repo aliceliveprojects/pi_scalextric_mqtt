@@ -25,10 +25,7 @@ function config($stateProvider, $urlRouterProvider) {
   
     $stateProvider.state(indexState);
 
-
-    $urlRouterProvider.otherwise('/index');
-
-  
+    $urlRouterProvider.otherwise('/index');  
 }
 
 angular.module('app').run(run);

@@ -12,12 +12,16 @@ function IndexViewCtrl($rootScope, $scope, mqttService) {
 
     vm.ip_address = $rootScope.defaultUrl;
     vm.port = $rootScope.defaultPort;
+
     vm.mqtt_topic = "";
     vm.mqtt_message = "";
+
     vm.logs = ""
+
     vm.subscribe = subscribe;
     vm.publish = publish;
     vm.connect = connect;
+    
     vm.clear = clear;
 
     function subscribe(valid) {
