@@ -1,7 +1,6 @@
 angular.module('app').service('mqttService', mqttService);
 
 mqttService.$inject = [
-    '$rootScope',
 ];
 
 
@@ -10,7 +9,7 @@ mqttService.$inject = [
         - https://github.com/eclipse/paho.mqtt.javascript
         - https://web.archive.org/web/20181212171208/https://github.com/eclipse/paho.mqtt.javascript
 */
-function mqttService($rootScope) {
+function mqttService() {
     var self = this;
 
     self.initialize = initialize;
