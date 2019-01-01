@@ -3,15 +3,16 @@ angular.module('app').controller('IndexViewCtrl', IndexViewCtrl);
 IndexViewCtrl.$inject = [
     '$rootScope',
     '$scope',
-    'mqttService'
+    'mqttService',
+    'brokerDetails'
 ];
 
-function IndexViewCtrl($rootScope, $scope, mqttService) {
+function IndexViewCtrl($rootScope, $scope, mqttService,brokerDetails) {
     var vm = this;
     var count = 0;
 
-    vm.ip_address = $rootScope.defaultUrl;
-    vm.port = $rootScope.defaultPort;
+    vm.ip_address = brokerDetails.host;
+    vm.port = brokerDetails.port;
 
     vm.mqtt_topic = "";
     vm.mqtt_message = "";

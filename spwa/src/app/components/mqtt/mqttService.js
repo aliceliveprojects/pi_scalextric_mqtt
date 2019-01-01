@@ -22,8 +22,9 @@ function mqttService() {
     var client = null;
 
     // Initialize mqtt client, this must be the done before any other actions
-    function initialize(hostname=$rootscope.defaultUrl, port=$rootscope.defaultPort, clientId = "clientId") {
+    function initialize(hostname, port, clientId = "clientId") {
         if (!hostname) { throw new Error("Invalid hostname") }
+        if (!port) { throw new Error("Invalid port")}
         client = new Paho.MQTT.Client(hostname, Number(port), clientId);
     }
 
