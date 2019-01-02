@@ -1,7 +1,6 @@
 angular.module('app').controller('IndexViewCtrl', IndexViewCtrl);
 
 IndexViewCtrl.$inject = [
-    '$rootScope',
     '$scope',
     'mqttService',
     'brokerDetails'
