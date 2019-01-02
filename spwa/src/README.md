@@ -9,8 +9,8 @@ I recommend looking at the [public brokers list](https://github.com/mqtt/mqtt.gi
 
 | Variable      | Description  |
 | ------------- |:-------------:|
-| BROKER_HOST   | Default Broker url |
-| BROKER_PORT   | Default Broker port|
+| BROKER_HOST   | Default Broker url (OPTIONAL) |
+| BROKER_PORT   | Default Broker port (OPTIONAL)|
 
 
 ```

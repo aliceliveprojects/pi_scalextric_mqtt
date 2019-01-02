@@ -7,8 +7,8 @@ var fs = require('fs');
 var getClientConfig = function () {
   var result = {};
 
-  if(!process.env.BROKER_HOST) throw new Error("undefined in environment: BROKER_HOST");
-  if(!process.env.BROKER_PORT) throw new Error("undefined in environment: BROKER_PORT");
+  if(!process.env.BROKER_HOST) process.env.BROKER_HOST = '';
+  if(!process.env.BROKER_PORT) process.env.BROKER_PORT = '';
   
   result.HOST = process.env.BROKER_HOST;
   result.PORT = process.env.BROKER_PORT;
