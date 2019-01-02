@@ -1,5 +1,1 @@
-angular.module('app').constant('brokerDetails',
-{
-    host : '192.168.1.3',
-    port : '9001'
-});
+angular.module('app').constant('brokerDetails',{"HOST":"192.168.1.3","PORT":"9001"});

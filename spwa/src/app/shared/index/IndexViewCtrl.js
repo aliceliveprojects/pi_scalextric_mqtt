@@ -11,8 +11,8 @@ function IndexViewCtrl($rootScope, $scope, mqttService,brokerDetails) {
     var vm = this;
     var count = 0;
 
-    vm.ip_address = brokerDetails.host;
-    vm.port = brokerDetails.port;
+    vm.ip_address = brokerDetails.HOST;
+    vm.port = brokerDetails.PORT;
 
     vm.mqtt_topic = "";
     vm.mqtt_message = "";
