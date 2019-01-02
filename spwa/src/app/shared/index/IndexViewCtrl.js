@@ -7,7 +7,7 @@ IndexViewCtrl.$inject = [
     'brokerDetails'
 ];
 
-function IndexViewCtrl($rootScope, $scope, mqttService,brokerDetails) {
+function IndexViewCtrl($scope, mqttService,brokerDetails) {
     var vm = this;
     var count = 0;
 
