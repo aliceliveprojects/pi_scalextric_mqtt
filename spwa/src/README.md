@@ -2,12 +2,13 @@
 Simple Single Page Web Application (SPWA) testing MQTT, [check it out](https://aliceliveprojects.github.io/pi_scalextric_mqtt/spwa/src/index.html#!/index)
 
 I recommend looking at the [public brokers list](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers).
+
 *Using ```broker.hivemq.com``` running on port ```8000```(Websockets) works well (must use websocket ports).*
 
 ## Local Deployment
 
 | Variable      | Description  |
-| ------------- |:-------------:| -----:|
+| ------------- |:-------------:|
 | BROKER_HOST   | Default Broker url |
 | BROKER_PORT   | Default Broker port|
 
