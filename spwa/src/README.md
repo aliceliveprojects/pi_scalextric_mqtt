@@ -19,6 +19,7 @@ There are two ways to provide the Mqtt default broker details to the spwa either
 ### URL Parameters
 
 example with URL parameters : https://aliceliveprojects.github.io/pi_scalextric_mqtt/spwa/src/index.html#!/index?brokerPort=9001&brokerUrl=192.168.1.3
+
 example without URL parameters : https://aliceliveprojects.github.io/pi_scalextric_mqtt/spwa/src/index.html#!/index
 
 ## Local Deployment
