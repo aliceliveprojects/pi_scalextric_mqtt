@@ -20,7 +20,7 @@ By default Mosquitto Broker 1.4 it not configured with websockets. Follow this t
 
 ### Cloud Broker Using Heroku & CloudMQTT
 
-*A verified Heroku account is needed*
+*A verified Heroku account is needed & Heroku Box region must be the United States*
 
 To setup a Mqtt Broker on Heroku first create a new application. Within the application panel navigate to the Resources tab. Within the resources tab under the Add-ons section search for CloudMQTT installing the free tier.
 Once CloudMQTT is installed click on the add-on to view broker details. 
