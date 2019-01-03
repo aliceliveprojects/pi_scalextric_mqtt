@@ -1,1 +1,1 @@
-angular.module('app').value('brokerDetails',{"HOST":"test","PORT":""});
+angular.module('app').value('brokerDetails',{"HOST":"","PORT":""});
