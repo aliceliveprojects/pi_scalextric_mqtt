@@ -24,6 +24,8 @@ example with URL parameters : https://aliceliveprojects.github.io/pi_scalextric_
 
 example without URL parameters : https://aliceliveprojects.github.io/pi_scalextric_mqtt/spwa/src/index.html#!/index
 
+![URL Without Broker Details](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/spwa/documentation/url_without_broker_details.png)
+
 ## Local Deployment
 
 ```
