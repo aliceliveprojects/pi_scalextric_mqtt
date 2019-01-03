@@ -31,11 +31,15 @@ function mqttService() {
     //connect to the mqtt broker
     function connect(callback,username,password) {
         if (!client) { throw new Error("Need to Initialize Mqtt") }
-        client.connect({
-            onSuccess:callback,
-            userName : username,
-            password : password
-        });
+
+        var mqttOptions = {
+            onSuccess : callback
+        }
+
+        if(username) mqttOptions.userName = username;
+        if(password) mqttOptions.password = password;
+        
+        client.connect(mqttOptions);
     }
 
     //subscribe to a mqtt topic, when message arrives client.onMessageArrived is called
