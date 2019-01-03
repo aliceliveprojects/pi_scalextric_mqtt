@@ -29,9 +29,13 @@ function mqttService() {
     }
 
     //connect to the mqtt broker
-    function connect(callback) {
+    function connect(callback,username,password) {
         if (!client) { throw new Error("Need to Initialize Mqtt") }
-        client.connect({onSuccess:callback});
+        client.connect({
+            onSuccess:callback,
+            userName : username,
+            password : password
+        });
     }
 
     //subscribe to a mqtt topic, when message arrives client.onMessageArrived is called
