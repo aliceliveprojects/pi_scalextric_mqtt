@@ -10,6 +10,8 @@ function IndexViewCtrl($scope, mqttService,brokerDetails) {
     var vm = this;
     var count = 0;
 
+    console.log(brokerDetails);
+
     vm.ip_address = brokerDetails.HOST;
     vm.port = brokerDetails.PORT;
 

@@ -16,16 +16,33 @@ function config($stateProvider, $urlRouterProvider) {
     */
     var indexState = {
         name: 'index',
-        url: '/index',
+        url: '/index?brokerUrl&brokerPort',
+        params: {
+            brokerUrl: {
+                dynamic: false
+            },
+            brokerPort: {
+                dynamic: false
+            }
+        },
         templateUrl: 'app/shared/index/indexView.html',
         controller: 'IndexViewCtrl',
-        controllerAs: 'indexView'
+        controllerAs: 'indexView',
+        resolve: {
+            broker: ['$stateParams','brokerDetails', function ($stateParams,brokerDetails) {
+                console.log($stateParams);
+
+                if($stateParams.brokerUrl) brokerDetails.HOST = $stateParams.brokerUrl;
+                if($stateParams.brokerPort) brokerDetails.PORT = $stateParams.brokerPort;
+
+            }]
+        }
     }
 
-  
+
     $stateProvider.state(indexState);
 
-    $urlRouterProvider.otherwise('/index');  
+    $urlRouterProvider.otherwise('/index');
 }
 
 angular.module('app').run(run);

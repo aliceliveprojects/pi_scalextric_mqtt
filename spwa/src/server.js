@@ -18,7 +18,7 @@ var getClientConfig = function () {
 
 var writeClientConfig = function(config){
   var client_config = config;
-  client_config = "angular.module('app').constant('brokerDetails'," + JSON.stringify(client_config) + ");";
+  client_config = "angular.module('app').value('brokerDetails'," + JSON.stringify(client_config) + ");";
   fs.writeFileSync('./app/components/brokerDetails/brokerDetailsConstant.js',client_config);
 }
 
