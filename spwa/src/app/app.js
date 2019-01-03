@@ -30,11 +30,8 @@ function config($stateProvider, $urlRouterProvider) {
         controllerAs: 'indexView',
         resolve: {
             broker: ['$stateParams','brokerDetails', function ($stateParams,brokerDetails) {
-                console.log($stateParams);
-
                 if($stateParams.brokerUrl) brokerDetails.HOST = $stateParams.brokerUrl;
                 if($stateParams.brokerPort) brokerDetails.PORT = $stateParams.brokerPort;
-
             }]
         }
     }
