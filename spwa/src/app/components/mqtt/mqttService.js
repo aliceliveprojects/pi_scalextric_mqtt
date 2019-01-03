@@ -29,11 +29,15 @@ function mqttService() {
     }
 
     //connect to the mqtt broker
-    function connect(callback,username,password) {
+    function connect(callback,username,password,ssl=false) {
         if (!client) { throw new Error("Need to Initialize Mqtt") }
 
         var mqttOptions = {
-            onSuccess : callback
+            onSuccess : callback,
+            onFailure : function(error){
+                console.log(error);
+            },
+            useSSL : ssl
         }
 
         if(username) mqttOptions.userName = username;
