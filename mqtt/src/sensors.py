@@ -2,28 +2,12 @@ import argparse
 import json
 import time
 import paho.mqtt.client as mqttClient
+import sensorsMqtt
 
 
 
 
-def on_connect(client, userdata, flags, rc):
-    if(rc == 0):
-        print("connected to broker")
-        global Connected
-        Connected = True
-        
-        client.message_callback_add("testUUID/sensors",sensorDetailsSub)
-        client.subscribe("testUUID/sensors")
 
-def sensorDetailsSub(client, userdata, message):
-   
-    # change the JSON string into a JSON object
-    sensorDetails = json.loads(message.payload)
-    
-    for sensor in sensorDetails:
-        print(sensor)
-   
-    
 
 
 # Define Command Line Arguments
@@ -39,7 +23,6 @@ args = parser.parse_args()
 print(args)
 
 
-Connected = False
 
 # Broker Details Taken From Command Line Args
 piID = args.piUUID
@@ -48,21 +31,5 @@ port = args.broker_port
 username = args.username
 password = args.password
 
-# Setup Client	
-client = mqttClient.Client(client_id="",clean_session=True)
 
-# Setup Client Username And Password if Specified
-if username != 'None':
-    if password != 'None':
-        client.username_pw_set(username, password=password)
-    else:
-        client.username_pw_set(username)
-
-
-client.on_connect= on_connect
-
-
-
-# Establish Connection To Broker
-client.connect(broker_address, port=port)
-client.loop_forever()
+sensorsMqtt.connect(piID,broker_address,port,username=username,password=password)
