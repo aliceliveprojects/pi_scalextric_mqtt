@@ -5,6 +5,8 @@ import paho.mqtt.client as mqttClient
 import sensorsMqtt
 
 
+def sensorDetails(sensorDetails):
+    print(sensorDetails)
 
 
 
@@ -31,5 +33,5 @@ port = args.broker_port
 username = args.username
 password = args.password
 
-
+sensorsMqtt.on_sensorDetails = sensorDetails
 sensorsMqtt.connect(piID,broker_address,port,username=username,password=password)

@@ -1,7 +1,9 @@
 import paho.mqtt.client as mqttClient
 import json
 
-UUID = ''
+UUID = None
+
+on_sensorDetails = None
 
 def on_connect(client, userdata, flags, rc):
     if(rc == 0):
@@ -11,12 +13,17 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe("testUUID/sensors")
 
 def sensorDetailsSub(client, userdata, message):
-   
-    # change the JSON string into a JSON object
-    sensorDetails = json.loads(message.payload)
+    # change the sensor string to JSON
+    sensorJSON = json.loads(message.payload)
+
+    try:
+        global sensorDetails
+        sensorDetails(sensorJSON)
+    except:
+        pass
+  
     
-    for sensor in sensorDetails:
-        print(sensor)
+    
    
 
 def connect(piUUID,broker_address,port,username='None',password='None'):
