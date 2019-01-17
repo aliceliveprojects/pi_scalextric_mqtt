@@ -9,8 +9,8 @@ def on_connect(client, userdata, flags, rc):
     if(rc == 0):
         print("connected to broker")
           
-        client.message_callback_add("testUUID/sensors",sensorDetailsSub)
-        client.subscribe("testUUID/sensors")
+        client.message_callback_add(UUID + '/sensors',sensorDetailsSub)
+        client.subscribe(UUID + '/sensors/#')
 
 def sensorDetailsSub(client, userdata, message):
     # change the sensor string to JSON
