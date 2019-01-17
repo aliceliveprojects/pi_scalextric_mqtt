@@ -15,10 +15,9 @@ def on_connect(client, userdata, flags, rc):
 def sensorDetailsSub(client, userdata, message):
     # change the sensor string to JSON
     sensorJSON = json.loads(message.payload)
-
     try:
         global sensorDetails
-        sensorDetails(sensorJSON)
+        on_sensorDetails(sensorJSON)
     except:
         pass
   
@@ -44,3 +43,5 @@ def connect(piUUID,broker_address,port,username='None',password='None'):
     # Establish Connection To Broker
     client.connect(broker_address, port=port)
     client.loop_forever()
+
+
