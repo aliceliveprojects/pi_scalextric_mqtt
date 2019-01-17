@@ -8,6 +8,12 @@ import sensorsMqtt
 def sensorDetails(sensorDetails):
     print(sensorDetails)
 
+    for sensorId in sensorDetails:
+        if 'trigger' in sensorDetails[sensorId]:
+            print('found trigger')
+        else:
+            print('use default trigger')
+
 
 
 
