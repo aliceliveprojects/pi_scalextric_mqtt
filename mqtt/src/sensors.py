@@ -3,18 +3,27 @@ import json
 import time
 import paho.mqtt.client as mqttClient
 import sensorsMqtt
+import importlib
+
+
+
+def sensorCallback(id,percent):
+    print("sensor triggered")
+    
 
 
 def sensorDetails(sensorDetails):
     print(sensorDetails)
 
     for sensorId in sensorDetails:
-        if 'trigger' in sensorDetails[sensorId]:
-            print('found trigger')
+        triggerPercent = 0
+        sensor = sensorDetails[sensorId]
+        if 'trigger' in sensor:
+            triggerPercent = sensor['trigger']
         else:
-            print('use default trigger')
-
-
+            triggerPercent = sensor['default_trigger']
+        sensor = importlib.import_module(sensor['name'])
+        sensor.startSensor(10,sensorCallback)
 
 
 
