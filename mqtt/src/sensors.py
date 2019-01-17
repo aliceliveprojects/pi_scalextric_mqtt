@@ -4,17 +4,28 @@ import time
 import paho.mqtt.client as mqttClient
 import sensorsMqtt
 import importlib
+import subprocess
+import threading, time
+
+
+
+def my_threaded_func(arg, arg2):
+    print "Running thread! Args:", (arg, arg2)
+    time.sleep(10)
+    print "Done!"
+
 
 
 
 def sensorCallback(id,percent):
-    print("sensor triggered")
+    sensorsMqtt.publishSensorEvent(id)
     
 
 
 def sensorDetails(sensorDetails):
     print(sensorDetails)
-
+    
+    
     for sensorId in sensorDetails:
         triggerPercent = 0
         sensor = sensorDetails[sensorId]
@@ -23,7 +34,9 @@ def sensorDetails(sensorDetails):
         else:
             triggerPercent = sensor['default_trigger']
         sensor = importlib.import_module(sensor['name'])
-        sensor.startSensor(10,sensorCallback)
+        thread = threading.Thread(target=sensor.startSensor, args=(10,sensorCallback))
+        thread.start()
+        
 
 
 
@@ -37,7 +50,6 @@ parser.add_argument('--username',nargs='?', help='Username for broker (username 
 parser.add_argument('--password',nargs='?', help='Password for broker (password must not be "None")')
 
 args = parser.parse_args()
-print(args)
 
 
 

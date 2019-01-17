@@ -13,9 +13,10 @@ client = None
 
 
 def on_connect(client, userdata, flags, rc):
+    print("connect")
     if(rc == 0):
         print("connected to broker")
-
+        
         # retrieve sensor details
         client.message_callback_add(UUID + '/sensors', sensorDetailsSub)
         client.subscribe(UUID + '/sensors')
@@ -64,6 +65,7 @@ def sensorDetailsSub(client, userdata, message):
 
 
 def connect(piUUID, broker_address, port, username='None', password='None'):
+    
     global UUID,client
     UUID = piUUID
 
@@ -78,9 +80,12 @@ def connect(piUUID, broker_address, port, username='None', password='None'):
     client.on_connect = on_connect
 
     # Establish Connection To Broker
+    
     client.connect(broker_address, port=port)
     client.loop_forever()
+    
 
 def publishSensorEvent(sensorId):
         topic = UUID + '/sensors/' + str(sensorId)
-        client.publish(topic,payload=None, qos=0, retain=False)
+        client.publish(topic)
+        client.loop()
