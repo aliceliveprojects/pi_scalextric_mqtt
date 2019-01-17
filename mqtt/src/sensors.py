@@ -8,7 +8,7 @@ import subprocess
 import threading, time
 
 
-
+sensorThreads= []
 
 def sensorCallback(id,percent):
     print("H")
@@ -19,9 +19,14 @@ def sensorCallback(id,percent):
 def sensorDetails(sensorDetails):
     print(sensorDetails)
     
+    stopSensor(sensorThreads)
     
     for sensorId in sensorDetails:
         startSensor(sensorDetails[sensorId])
+
+def stopSensor(sensors):
+    for sensor in sensors:
+        sensors.stop()
         
 def startSensor(sensor):
     triggerPercent = 0
@@ -33,7 +38,10 @@ def startSensor(sensor):
     
     sensor = importlib.import_module(sensor['name'])
     thread = threading.Thread(target=sensor.startSensor, args=(triggerPercent,sensorCallback))
+    sensorThreads.append(sensor)
     thread.start()
+    
+  
 
 
 # Define Command Line Arguments
