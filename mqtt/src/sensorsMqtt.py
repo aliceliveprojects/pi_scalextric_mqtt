@@ -3,33 +3,69 @@ import json
 
 UUID = None
 
+sensorDetails = {}
+
+recievedTriggers = 0
+
 on_sensorDetails = None
+
+
+
 
 def on_connect(client, userdata, flags, rc):
     if(rc == 0):
         print("connected to broker")
-          
-        client.message_callback_add(UUID + '/sensors',sensorDetailsSub)
-        client.subscribe(UUID + '/sensors/#')
+
+        # retrieve sensor details
+        client.message_callback_add(UUID + '/sensors', sensorDetailsSub)
+        client.subscribe(UUID + '/sensors')
+
+
+def sensorTriggerPercentSub(client, userdata, message):
+    global sensorDetails, recievedTriggers
+
+    recievedTriggers = 1+recievedTriggers
+    
+    topicParts = message.topic.split('/')
+    sensorId = int(topicParts[2])
+    
+    
+    sensor = sensorDetails[sensorId]
+    sensor['trigger'] = message.payload
+
+    # check if all sensor trigger percents have been recieved, then notify 
+    if(recievedTriggers == len(sensorDetails)):
+            recievedTriggers = 0
+            try:
+                on_sensorDetails(sensorDetails)
+            except:
+                    pass
+            
+  
+
+
 
 def sensorDetailsSub(client, userdata, message):
     # change the sensor string to JSON
     sensorJSON = json.loads(message.payload)
-    try:
-        global sensorDetails
-        on_sensorDetails(sensorJSON)
-    except:
-        pass
-  
-    
-    
-   
 
-def connect(piUUID,broker_address,port,username='None',password='None'):
+    global sensorDetails
+
+    # fill sensor dic, key is sensor id
+    for sensor in sensorJSON:
+        sensorDetails[sensor['id']] = sensor
+
+    
+    # once sensor details have been retrieved, retireve sensor trigger percentages 
+    client.message_callback_add(UUID + '/sensors/+/trigger_percent', sensorTriggerPercentSub)
+    client.subscribe(UUID + '/sensors/+/trigger_percent')
+
+
+def connect(piUUID, broker_address, port, username='None', password='None'):
     global UUID
     UUID = piUUID
-    
-    client = mqttClient.Client(client_id="",clean_session=True)
+
+    client = mqttClient.Client(client_id="", clean_session=True)
 
     if username != 'None':
         if password != 'None':
@@ -37,11 +73,8 @@ def connect(piUUID,broker_address,port,username='None',password='None'):
         else:
             client.username_pw_set(username)
 
+    client.on_connect = on_connect
 
-    client.on_connect= on_connect
-    
     # Establish Connection To Broker
     client.connect(broker_address, port=port)
     client.loop_forever()
-
-
