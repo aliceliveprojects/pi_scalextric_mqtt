@@ -19,6 +19,8 @@ def on_connect(client, userdata, flags, rc):
         # retrieve sensor details
         client.message_callback_add(UUID + '/sensors', sensorDetailsSub)
         client.subscribe(UUID + '/sensors')
+        # unsubscribe
+        client.unsubscribe(UUID + '/sensors')
 
 
 def sensorTriggerPercentSub(client, userdata, message):
