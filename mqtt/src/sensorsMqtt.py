@@ -9,7 +9,7 @@ recievedTriggers = 0
 
 on_sensorDetails = None
 
-
+client = None
 
 
 def on_connect(client, userdata, flags, rc):
@@ -64,7 +64,7 @@ def sensorDetailsSub(client, userdata, message):
 
 
 def connect(piUUID, broker_address, port, username='None', password='None'):
-    global UUID
+    global UUID,client
     UUID = piUUID
 
     client = mqttClient.Client(client_id="", clean_session=True)
@@ -80,3 +80,7 @@ def connect(piUUID, broker_address, port, username='None', password='None'):
     # Establish Connection To Broker
     client.connect(broker_address, port=port)
     client.loop_forever()
+
+def publishSensorEvent(sensorId):
+        topic = UUID + '/sensors/' + str(sensorId)
+        client.publish(topic,payload=None, qos=0, retain=False)
