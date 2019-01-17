@@ -12,12 +12,17 @@ def on_connect(client, userdata, flags, rc):
         global Connected
         Connected = True
         
-        client.message_callback_add("testUUID/sensors",sensorDetails)
+        client.message_callback_add("testUUID/sensors",sensorDetailsSub)
         client.subscribe("testUUID/sensors")
 
-def sensorDetails(client, userdata, message):
-
-    print("Received message '" + str(message.payload) + "' on topic '"+ message.topic + "' with QoS " + str(message.qos))
+def sensorDetailsSub(client, userdata, message):
+   
+    # change the JSON string into a JSON object
+    sensorDetails = json.loads(message.payload)
+    
+    for sensor in sensorDetails:
+        print(sensor)
+   
     
 
 
