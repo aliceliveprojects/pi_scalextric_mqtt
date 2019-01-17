@@ -9,15 +9,9 @@ import threading, time
 
 
 
-def my_threaded_func(arg, arg2):
-    print "Running thread! Args:", (arg, arg2)
-    time.sleep(10)
-    print "Done!"
-
-
-
 
 def sensorCallback(id,percent):
+    print("H")
     sensorsMqtt.publishSensorEvent(id)
     
 
@@ -27,17 +21,19 @@ def sensorDetails(sensorDetails):
     
     
     for sensorId in sensorDetails:
-        triggerPercent = 0
-        sensor = sensorDetails[sensorId]
-        if 'trigger' in sensor:
-            triggerPercent = sensor['trigger']
-        else:
-            triggerPercent = sensor['default_trigger']
-        sensor = importlib.import_module(sensor['name'])
-        thread = threading.Thread(target=sensor.startSensor, args=(10,sensorCallback))
-        thread.start()
+        startSensor(sensorDetails[sensorId])
         
-
+def startSensor(sensor):
+    triggerPercent = 0
+    
+    if 'trigger' in sensor:
+        triggerPercent = sensor['trigger']
+    else:
+        triggerPercent = sensor['default_trigger']
+    
+    sensor = importlib.import_module(sensor['name'])
+    thread = threading.Thread(target=sensor.startSensor, args=(triggerPercent,sensorCallback))
+    thread.start()
 
 
 # Define Command Line Arguments
