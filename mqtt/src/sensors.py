@@ -26,11 +26,12 @@ parser = argparse.ArgumentParser(description='Publishes to Sensor Event once a s
 parser.add_argument('piUUID',help='UUID of the pi')
 parser.add_argument('broker_address', help='Broker address, not including port example: m15.cloudmqtt.com')
 parser.add_argument('broker_port',help='Port for broker',type=int)
-parser.add_argument('username',help='Username for broker, if username is not being used pass -1')
-parser.add_argument('password',help='Password for broker, if password is not being used pass -1')
 parser.add_argument('sensorFilePath', help='Absolute path to the sensor.json file')
+parser.add_argument('--username',nargs='?', help='Username for broker (username must not be "None")')
+parser.add_argument('--password',nargs='?', help='Password for broker (password must not be "None")')
 
 args = parser.parse_args()
+print(args)
 
 
 Connected = False
@@ -46,8 +47,8 @@ password = args.password
 client = mqttClient.Client(client_id="",clean_session=True)
 
 # Setup Client Username And Password if Specified
-if username != '-1':
-    if password != '-1':
+if username != 'None':
+    if password != 'None':
         client.username_pw_set(username, password=password)
     else:
         client.username_pw_set(username)
