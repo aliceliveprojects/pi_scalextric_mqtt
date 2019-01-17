@@ -1,1 +1,1 @@
-angular.module('app').value('brokerDetails',{"HOST":"broker.hivemq.com","PORT":"8000"});
+angular.module('app').value('brokerDetails',{"HOST":"","PORT":""});

@@ -25,17 +25,19 @@ function mqttService() {
     function initialize(hostname, port, clientId = "clientId") {
         if (!hostname) { throw new Error("Invalid hostname") }
         if (!port) { throw new Error("Invalid port")}
+        
         client = new Paho.MQTT.Client(hostname, Number(port), clientId);
     }
 
     //connect to the mqtt broker
     function connect(callback,username,password,ssl=false) {
         if (!client) { throw new Error("Need to Initialize Mqtt") }
+        if (callback && typeof callback !== 'function') { throw new Error("Callback must be a function")}
 
         var mqttOptions = {
             onSuccess : callback,
             onFailure : function(error){
-                console.log(error);
+                console.error(error);
             },
             useSSL : ssl
         }
@@ -49,12 +51,17 @@ function mqttService() {
     //subscribe to a mqtt topic, when message arrives client.onMessageArrived is called
     function subscribe(topic) {
         if (!client) { throw new Error("Need to Initialize Mqtt")}
+        if (!topic) { throw new Error("Need to define a topic")}
+
         client.subscribe(topic)
     }
 
     //publish mqtt message
     function publish(topic,message){
         if (!client) { throw new Error("Need to Initialize Mqtt")}
+        if (!topic) {throw new Error("Need to define a topic")}
+        if (!message) {throw new Error("Need to define a message")}
+
         var mqtt_message = new Paho.MQTT.Message(message);
         mqtt_message.destinationName = topic;
         client.send(mqtt_message);
@@ -63,12 +70,16 @@ function mqttService() {
     //called when connection is lost
     function onConnectionLost(callback) {
         if (!client) { throw new Error("Need to Initialize Mqtt") }
+        if (callback && typeof callback !== 'function') { throw new Error("Callback must be a function")}
+        
         client.onConnectionLost = callback;
     }
 
     // called when a message arrives
     function onMessageArrived(callback) {
         if (!client) { throw new Error("Need to Initialize Mqtt") }
+        if (callback && typeof callback !== 'function') { throw new Error("Callback must be a function")}
+
         client.onMessageArrived = callback;
     }
 
