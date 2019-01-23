@@ -19,6 +19,15 @@ grovepi.pinMode(led,"OUTPUT")
 
 stop = False
 
+def changeTriggerPercent(triggerPercent):
+    global threshold
+    threshold = int(triggerPercent)
+
+def stopSensor():
+    print("stopped")
+    global stop
+    stop = True
+
 def startSensor(triggerPercent,callback):
     global threshold
     threshold = int(triggerPercent)
@@ -40,11 +49,5 @@ def startSensor(triggerPercent,callback):
             stopSensor()
             print("Error")
 
-def changeTriggerPercent(triggerPercent):
-    global threshold
-    threshold = int(triggerPercent)
 
-def stopSensor():
-    print("stopped")
-    global stop
-    stop = True
+

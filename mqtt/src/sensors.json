@@ -1,0 +1,12 @@
+[
+{
+"id" : 0,
+"name" : "light",
+"default_trigger" :  300 
+},
+{
+"id" : 1,
+"name" : "sound",
+"default_trigger" : 20
+}
+]
