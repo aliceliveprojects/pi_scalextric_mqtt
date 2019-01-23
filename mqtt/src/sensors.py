@@ -26,7 +26,7 @@ def sensorDetails(sensorDetails):
 
 def stopSensor(sensors):
     for sensor in sensors:
-        sensors.stop()
+        sensor.stop()
         
 def startSensor(sensor):
     triggerPercent = 0
