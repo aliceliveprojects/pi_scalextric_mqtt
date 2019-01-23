@@ -63,5 +63,19 @@ port = args.broker_port
 username = args.username
 password = args.password
 
-sensorsMqtt.on_sensorDetails = sensorDetails
-sensorsMqtt.connect(piID,broker_address,port,username=username,password=password)
+
+
+def execute():
+        sensorsMqtt.on_sensorDetails = sensorDetails
+        sensorsMqtt.connect(piID,broker_address,port,username=username,password=password)
+
+def main():
+    try:
+        execute()
+    finally:
+        stopSensor(sensorThreads)
+        sensorsMqtt.disconnect()
+
+if __name__=='__main__':
+    main()
+
