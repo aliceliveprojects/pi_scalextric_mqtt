@@ -37,6 +37,7 @@ def startSensor(triggerPercent,callback):
             print(light_value)
             time.sleep(.5)
         except IOError:
+            stopSensor()
             print("Error")
 
 def changeTriggerPercent(triggerPercent):

@@ -89,3 +89,6 @@ def publishSensorEvent(sensorId):
         topic = UUID + '/sensors/' + str(sensorId)
         client.publish(topic)
         client.loop()
+
+def disconnect():
+        client.disconnect()
