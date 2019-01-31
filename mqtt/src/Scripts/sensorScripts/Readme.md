@@ -51,8 +51,8 @@ Must update the trigger percentage
 
 Parameters
 | Name     | Type | Description |
-| ---------|------|---------------|
-| triggerPercent| Number|New trigger percentage|
+| --------- |------ |---------------|
+| triggerPercent | Number | New trigger percentage |
 
 
 **stopSensor**
@@ -65,6 +65,6 @@ Must start the sensor and call callback when triggered
 
 Parameters
 | Name     | Type | Description |
-| -------------|------|---------------|
-| triggerPercent| Number|Trigger percentage|
-| callback| Function|Trigger percentage callback|
+| ------------- |------ |---------------|
+| triggerPercent| Number| Trigger percentage |
+| callback| Function| Trigger percentage callback |
