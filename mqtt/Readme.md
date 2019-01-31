@@ -6,7 +6,7 @@ Within the src folder you will find
  - [QrCode](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/QrCode) folder which contains code and documentation to generate a qr code
  - [Scripts/SensorScripts](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Scripts/sensorScripts) folder which contains sensors scripts and documentation
 
-  
+Below explains how to setup a Mqtt Broker
 
 ## Setting Up MQTT 
 
