@@ -2,9 +2,9 @@
 
 There are three configuration files: 
 
-    - config.json holds the start up configuration details
-    - resources.json holds the deployable resources details
-    - sensor.json holds sensor details
+- config.json holds the start up configuration details
+- resources.json holds the deployable resources details
+- sensor.json holds sensor details
 
 
 ### Config
