@@ -23,11 +23,11 @@ There are two ways to provide the Mqtt default broker details to the spwa either
 
 example with URL parameters : https://aliceliveprojects.github.io/pi_scalextric_mqtt/spwa/src/index.html#!/index?brokerPort=8000&brokerUrl=broker.hivemq.com
 
-![URL With Broker Details](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/spwa/documentation/url_with_broker_details.png)
+![URL With Broker Details](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/depreciated_spwa/documentation/url_with_broker_details.png)
 
 example without URL parameters : https://aliceliveprojects.github.io/pi_scalextric_mqtt/spwa/src/index.html#!/index
 
-![URL Without Broker Details](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/spwa/documentation/url_without_broker_details.png)
+![URL Without Broker Details](https://github.com/aliceliveprojects/pi_scalextric_mqtt/blob/master/depreciated_spwa/documentation/url_without_broker_details.png)
 
 ## Local Deployment
 
