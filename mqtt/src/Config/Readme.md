@@ -74,3 +74,22 @@ There are three configuration files:
 ]
 ```
 
+## Sensors
+| Details     | Description  |
+| ----------- |:-------------:|
+| id          | Id to uniquely identify each sensor |
+| name        | Sensor name |
+| default_trigger    | Percentage to trigger a sensor event|
+
+
+*The sensor name MUST match the sensor script file, for example light ==> light.py*  
+
+```
+[
+    {
+        "id",
+        "name",
+        "default_trigger"
+    }
+]
+```
