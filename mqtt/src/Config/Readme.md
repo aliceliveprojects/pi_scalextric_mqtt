@@ -55,7 +55,7 @@ There are three configuration files:
 | systemResource | Which system resource, if any, does the resource use (OPTIONAL)|
 
 
-*If the resource uses a system resource the resource name MUST match the resource script file, for example oil_slick ==> oli_slick.py*  
+*If the resource uses a system resource the resource name MUST match the resource script file, for example oil_slick ==> oil_slick.py*  
 
 
 | Supported System Resources     | Description  |
