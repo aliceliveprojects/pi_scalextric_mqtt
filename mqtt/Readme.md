@@ -52,3 +52,6 @@ To import a Node-Red flow simple navigate ```Menu > Import > Clipboard``` and co
 
 ```
 
+---
+
+This is the work of [Yusof Bandar](https://github.com/YusofBandar).
