@@ -74,6 +74,3 @@ Must start the sensor and call callback when triggered
 | callback| Function| Trigger percentage callback |
 
 
----
-
-This is the work of [Yusof Bandar](https://github.com/YusofBandar).
