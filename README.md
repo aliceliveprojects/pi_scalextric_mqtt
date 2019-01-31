@@ -8,39 +8,6 @@
 
 
 # Topic Structure
-===================
-  * [{UUID}/control/game_state](https://github.com/aliceliveprojects/pi_scalextric_mqtt#uuidcontrolgame_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/control/pi_state](#{UUID}/control/pi_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/control/{channel}/throttle](#{UUID}/control/{channel}/throttle)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/control/{channel}/event](#{UUID}/control/{channel}/event)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/control/{channel}/{resourceId}/state](#{UUID}/control/{channel}/{resourceId}/state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/control/{channe}/{resourceId}/count](#{UUID}/control/{channe}/{resourceId}/count)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/sensors](#{UUID}/sensors)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/resources](#{UUID}/resources)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/sensors/{sensorId}](#{UUID}/sensors/{sensorId})
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-  * [{UUID}/sensors/{sensorId}/trigger_percent](#{UUID}/sensors/{sensorId}/trigger_percent)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-    * [{UUID}/control/game_state](#{UUID}/control/game_state)
-      
-
 
 ## {UUID}/control/game_state
 Sets or gets the game state
