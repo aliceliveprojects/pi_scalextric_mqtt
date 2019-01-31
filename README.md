@@ -128,3 +128,29 @@ target : [CHANNEL_ID]
 }
 ```
 
+
+## {UUID}/control/{channe}/{resourceId}/count
+Sets or gets the number of deployments left for a resource
+
+### Subscribe
+To retireve resource count
+
+**Format**
+
+```
+count
+```
+
+### Publishing
+To set resource count
+
+| Option      | Value  |
+| ------------- |:-------------:|
+| Retain   | True |
+
+
+**Format**
+
+```
+count
+````
