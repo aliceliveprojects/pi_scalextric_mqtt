@@ -22,7 +22,7 @@ There are three configuration files:
 | username    | broker username (OPTIONAL) |
 | password    | broker password (OPTIONAL) |
 
-| Sensor Details     | Description  |
+| Path Details     | Description  |
 | ----------- |:-------------:|
 | resources   | absolute path to resources folder |
 | sensors     | absolute path to sensor startup script |
