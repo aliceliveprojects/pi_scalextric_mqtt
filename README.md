@@ -32,6 +32,29 @@ Sets or gets the pi state
 ### Subscribe
 To retrieve pi state
 
+**Format**
+New state has been requested
+```
+{
+  requested : [target_state]
+}
+```
+
+State is in the process of execution
+```
+{
+  requested : [state]
+}
+```
+
+
+State is ready for a new request
+```
+{
+  requested : [state]
+}
+```
+
 ### Publish
 To set pi state
 
