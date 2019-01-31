@@ -1,5 +1,12 @@
 # pi_scalextric_mqtt
-Setting up a Mqtt broker 
+
+### Project Structure
+Within the src folder you will find
+ - [Config](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config) folder which contains example config files and documentation
+ - [QrCode](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/QrCode) folder which contains code and documentation to generate a qr code
+ - [Scripts/SensorScripts](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Scripts/sensorScripts) folder which contains sensors scripts and documentation
+
+  
 
 ## Setting Up MQTT 
 
