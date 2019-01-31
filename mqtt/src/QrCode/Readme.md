@@ -27,3 +27,8 @@ To run :
 For Help :
 
 ```python qrCodeGen.py -h```
+
+
+---
+
+This is the work of [Yusof Bandar](https://github.com/YusofBandar).
