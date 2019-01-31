@@ -3,9 +3,11 @@
 This readme is intended for developers only not for deployment
 
 ## How It Works
-Well thats simple. Node-red reads where sensors.py is located from the config.json file and deploys the script.
+Well thats simple. Node-red reads where sensors.py is located from the config.json file and deploys it.
 
 Sensors.py subscribes to the sensors topic to retrieve sensor.json details and starts up each sensor. For sensors.py to start-up each sensor each script file must be in sensors.py folder and must be named the same as in the sensors.json file.
+
+For example oli_slick ==> oil_slick.py.
 
 Each sensor runs on an independant thread and can publish to the sensor event topic when triggered.
 
