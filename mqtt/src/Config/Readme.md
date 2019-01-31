@@ -7,9 +7,9 @@ There are three configuration files:
 - sensor.json holds sensor details
 
 
-### Config
+## Config
 
-#### Details
+### Details
 
 | Details     | Description  |
 | ----------- |:-------------:|
@@ -47,7 +47,7 @@ There are three configuration files:
 }
 ```
 
-### Resources
+## Resources
 
 | Details     | Description  |
 | ----------- |:-------------:|
@@ -56,7 +56,9 @@ There are three configuration files:
 | imageUrl    | Url to resource image |
 | systemResource | Which system resource, if any, does the resource use (OPTIONAL)|
 
+
 *If the resource uses a system resource the resource name MUST match the resource script file, for example oil_slick ==> oli_slick.py*  
+
 
 | Supported System Resource     | Description  |
 | ----------- |:-------------:|
