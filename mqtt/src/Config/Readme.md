@@ -93,3 +93,7 @@ There are three configuration files:
     }
 ]
 ```
+
+---
+
+This is the work of [Yusof Bandar](https://github.com/YusofBandar).
