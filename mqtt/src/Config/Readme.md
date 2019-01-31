@@ -54,6 +54,14 @@ There are three configuration files:
 | id          | Id to uniquely identify each resource |
 | name        | Resource name |
 | imageUrl    | Url to resource image |
+| systemResource | Which system resource, if any, does the resource use (OPTIONAL)|
+
+*If the resource uses a system resource the resource name MUST match the resource script file, for example oil_slick ==> oli_slick.py*  
+
+| Supported System Resource     | Description  |
+| ----------- |:-------------:|
+| throttle         | Effects the throttle |
+
 
 ### Format
 
@@ -62,7 +70,8 @@ There are three configuration files:
     {
         "id",
         "name",
-        "imageUrl"
+        "imageUrl",
+        "systemResource"
     }
 ]
 ```
