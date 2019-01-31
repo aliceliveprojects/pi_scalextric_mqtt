@@ -9,9 +9,6 @@
 
 # Topic Structure
 
-## {UUID}
-Unqiue Id to identify which device
-
 ## {UUID}/control/game_state
 Sets or gets the game state
 
@@ -33,6 +30,7 @@ Sets or gets the pi state
 To retrieve pi state
 
 **Format**
+
 New state has been requested
 ```
 {
@@ -69,3 +67,64 @@ To set pi state
   requested : [target_state]
 }
 ```
+
+## {UUID}/control/{channe}/throttle
+Sets or gets the channel throttle
+
+### Subscribe
+To retrieve channel throttle
+
+**Format**
+
+```
+[throttle]
+```
+
+### Publish
+To Set channel throttle
+
+**Format**
+
+```
+{
+  set : [throttle]
+}
+```
+
+## {UUID}/control/{channe}/event
+In Progress...
+
+## {UUID}/control/{channe}/{resourceId}/state
+Sets or gets the resource state
+
+### Subscribe 
+To retrieve resource state
+
+**Format**
+
+Resource is deploying
+```
+{
+  requested : [state]
+}
+```
+
+
+Resource is ready for deployment
+```
+{
+  requested : [state]
+}
+```
+
+### Publishing
+To deploy resource
+
+**Format**
+
+```
+state : "Requested"
+target : [CHANNEL_ID]
+}
+```
+
