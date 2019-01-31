@@ -8,17 +8,15 @@
 
 
 # Topic Structure
-
-
-Table of Contents
-=================
-
-  * [Dockerfile.vim](#dockerfilevim)
-  * [Screenshot](#screenshot)
-  * [Installation](#installation)
-        * [OR using Pathogen:](#or-using-pathogen)
-        * [OR using Vundle:](#or-using-vundle)
-  * [License](#license)
+===================
+  * [{UUID}/control/game_state](#{UUID}/control/game_state)
+  * [{UUID}/control/pi_state](#{UUID}/control/pi_state)
+  * [{UUID}/control/{channe}/throttle](#{UUID}/control/{channe}/throttle)
+  * [{UUID}/control/{channe}/event](#{UUID}/control/{channe}/event)
+  * [{UUID}/control/{channe}/event](#license)
+  * [{UUID}/control/{channe}/event](#license)
+  * [{UUID}/control/{channe}/event](#license)
+  * [{UUID}/control/{channe}/event](#license)
 
 
 ## {UUID}/control/game_state
@@ -80,7 +78,7 @@ To set pi state
 }
 ```
 
-## {UUID}/control/{channe}/throttle
+## {UUID}/control/{channel}/throttle
 Sets or gets the channel throttle
 
 ### Subscribe
@@ -103,10 +101,10 @@ To Set channel throttle
 }
 ```
 
-## {UUID}/control/{channe}/event
+## {UUID}/control/{channel}/event
 In Progress...
 
-## {UUID}/control/{channe}/{resourceId}/state
+## {UUID}/control/{channel}/{resourceId}/state
 Sets or gets the resource state
 
 ### Subscribe 
