@@ -49,7 +49,7 @@ Each sensor script must contain three functions
 
 Must update the trigger percentage
 
-Parameters
+**Parameters**
 
 | Name     | Type | Description |
 | --------- |------ |---------------|
@@ -64,7 +64,7 @@ Must stop sensor
 startSensor
 Must start the sensor and call callback when triggered
 
-Parameters
+**Parameters**
 
 | Name     | Type | Description |
 | ------------- |------ |---------------|
