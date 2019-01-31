@@ -9,7 +9,6 @@ There are three configuration files:
 
 ## Config
 
-### Details
 
 | Details     | Description  |
 | ----------- |:-------------:|
@@ -28,7 +27,6 @@ There are three configuration files:
 | resources   | absolute path to resources folder |
 | sensors     | absolute path to sensor startup script |
 
-#### Format
 
 ```
 {
@@ -64,8 +62,6 @@ There are three configuration files:
 | ----------- |:-------------:|
 | throttle         | Effects the throttle |
 
-
-### Format
 
 ```
 [
