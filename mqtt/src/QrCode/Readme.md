@@ -16,7 +16,7 @@ Optional Arguments
 
 | Arguments     | Description |
 | ------------- |:---------------:|
-| --filname     | file name of the qr code image (OPTIONAL)|
+| --filename     | file name of the qr code image (OPTIONAL)|
 
 
 
