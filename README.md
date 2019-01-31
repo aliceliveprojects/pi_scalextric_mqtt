@@ -8,6 +8,7 @@
 
 
 # Topic Structure
+ I recommend viewing the topic structure on mind-mup
 
 ## {UUID}/control/game_state
 Sets or gets the game state
@@ -198,3 +199,7 @@ Set a new trigger percent, this does not update the [config](https://github.com/
 ```
 trigger_percent
 ```
+
+---
+
+This is the work of [Yusof Bandar](https://github.com/YusofBandar).
