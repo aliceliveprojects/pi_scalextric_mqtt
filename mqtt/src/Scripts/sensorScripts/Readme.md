@@ -50,6 +50,7 @@ Each sensor script must contain three functions
 Must update the trigger percentage
 
 Parameters
+
 | Name     | Type | Description |
 | --------- |------ |---------------|
 | triggerPercent | Number | New trigger percentage |
@@ -64,6 +65,7 @@ startSensor
 Must start the sensor and call callback when triggered
 
 Parameters
+
 | Name     | Type | Description |
 | ------------- |------ |---------------|
 | triggerPercent| Number| Trigger percentage |
