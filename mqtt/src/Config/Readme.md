@@ -32,7 +32,7 @@ There are three configuration files:
 
 ```
 {
-    "uuid" :
+    "uuid",
     "broker" : {
         "host"
         "port"
@@ -47,4 +47,23 @@ There are three configuration files:
 }
 ```
 
+### Resources
+
+| Details     | Description  |
+| ----------- |:-------------:|
+| id          | Id to uniquely identify each resource |
+| name        | Resource name |
+| imageUrl    | Url to resource image |
+
+### Format
+
+```
+[
+    {
+        "id",
+        "name",
+        "imageUrl"
+    }
+]
+```
 
