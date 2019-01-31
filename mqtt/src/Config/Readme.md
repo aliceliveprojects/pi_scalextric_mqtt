@@ -58,7 +58,7 @@ There are three configuration files:
 *If the resource uses a system resource the resource name MUST match the resource script file, for example oil_slick ==> oli_slick.py*  
 
 
-| Supported System Resource     | Description  |
+| Supported System Resources     | Description  |
 | ----------- |:-------------:|
 | throttle         | Effects the throttle |
 
