@@ -13,11 +13,12 @@ There are three configuration files:
 
 | Details     | Description  |
 | ----------- |:-------------:|
-| uuid        | Id to unqiuely identify each pi |
-| host        | broker host |
+| uuid        | Id to uniquely identify each pi |
+
 
 | Broker Details     | Description  |
 | ----------- |:-------------:|
+| host        | broker host |
 | port        | broker port |
 | username    | broker username (OPTIONAL) |
 | password    | broker password (OPTIONAL) |
