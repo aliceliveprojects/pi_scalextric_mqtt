@@ -154,3 +154,23 @@ To set resource count
 ```
 count
 ````
+
+## {UUID}/sensors
+To get sensor details
+
+### Subscribe
+To retireve all sensor details
+
+**Format**
+
+see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#sensors
+
+## {UUID}/resources
+To get resource details
+
+### Subscribe
+To retrieve all resource details
+
+**Format**
+
+see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#resources
