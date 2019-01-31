@@ -174,3 +174,27 @@ To retrieve all resource details
 **Format**
 
 see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#resources
+
+
+## {UUID}/sensors/{sensorId}
+Gets sensor events
+
+### Subscribed
+Notified when a sensor is triggered
+
+## {UUID}/sensors/{sensorId}/trigger_percent
+Set a trigger percent
+
+### Publish
+Set a new trigger percent, this does not update the [config](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config) file
+
+| Option      | Value  |
+| ------------- |:-------------:|
+| Retain   | True |
+
+
+**Format**
+
+```
+trigger_percent
+```
