@@ -13,7 +13,7 @@ Positional Arguments
 | host          | host of the single page web app|
 
 Optional Arguments
-| Arguments     | Description
+| Arguments     | Description |
 | ------------- |:---------------:|
 | --filname     | file name of the qr code image (OPTIONAL)|
 
