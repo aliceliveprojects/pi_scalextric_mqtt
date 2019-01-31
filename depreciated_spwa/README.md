@@ -1,7 +1,10 @@
 # pi_scalextric_mqtt SPWA
 Simple Single Page Web Application (SPWA) testing MQTT.
 
-I recommend looking at the [public brokers list](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers).
+I suggest not using this SPWA anymore instread I would
+
+- look at the [public brokers list](https://github.com/mqtt/mqtt.github.io/wiki/public_brokers).
+- and test using 
 
 *Using ```broker.hivemq.com``` running on port ```8000```(Websockets) works well (must use websocket ports).*
 
