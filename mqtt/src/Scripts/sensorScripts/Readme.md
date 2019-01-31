@@ -36,8 +36,8 @@ Optional Arguments
 
 To run : 
 
-```python qrCodeGen.py [PIUUID] [BROKER_ADDRESS] [BROKER_PORT] --username [USERNAME] --password [PASSWORD]```
+```python sensors.py [PIUUID] [BROKER_ADDRESS] [BROKER_PORT] --username [USERNAME] --password [PASSWORD]```
 
 For Help :
 
-```python qrCodeGen.py -h```
+```python sensors.py -h```
