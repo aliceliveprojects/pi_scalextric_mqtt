@@ -1,5 +1,5 @@
 # pi_scalextric_mqtt
-Setting up Mqtt on a Raspberry Pi using Mosquitto
+Setting up a Mqtt broker 
 
 ## Setting Up MQTT 
 
@@ -14,13 +14,17 @@ The Mosquitto Broker 1.4 comes with Raspbian Stretch. If Raspbian Jesse is being
 By default Mosquitto Broker 1.4 it not configured with websockets. Follow this tutorial to configure Mosquitto with websockets
 [Mosquitto Websocket](https://gist.github.com/smoofit/dafa493aec8d41ea057370dbfde3f3fc) or [Mosquitto Websocket Archived](http://web.archive.org/web/20181213140654/https://gist.github.com/smoofit/dafa493aec8d41ea057370dbfde3f3fc)
 
----
+*The broker starts automatically on boot, to stop the broker sudo /etc/init.d/mosquitto stop & to re-start sudo /etc/init.d/mosquitto start* 
 
-*The broker start automatically on boot, to stop the broker sudo /etc/init.d/mosquitto stop & to start sudo /etc/init.d/mosquitto start* 
+---
 
 ### Cloud Broker Using Heroku & CloudMQTT
 
+*CloudMQTT free tier is extremely restrictive only allowing upto and 5 connections, only use this for testing*
+
 *A verified Heroku account is needed & Heroku Box region must be the United States*
+
+
 
 To setup a Mqtt Broker on Heroku first create a new application. Within the application panel navigate to the Resources tab. Within the resources tab under the Add-ons section search for CloudMQTT installing the free tier.
 Once CloudMQTT is installed click on the add-on to view broker details. 
