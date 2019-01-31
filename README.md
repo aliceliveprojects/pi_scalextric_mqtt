@@ -9,7 +9,7 @@
 
 # Topic Structure
 ===================
-  * [{UUID}/control/game_state](#{UUID}/control/game_state)
+  * [{UUID}/control/game_state](https://github.com/aliceliveprojects/pi_scalextric_mqtt#uuidcontrolgame_state)
     * [{UUID}/control/game_state](#{UUID}/control/game_state)
     * [{UUID}/control/game_state](#{UUID}/control/game_state)
   * [{UUID}/control/pi_state](#{UUID}/control/pi_state)
