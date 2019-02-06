@@ -1,14 +1,14 @@
 [
     {
         "id": 1,
-        "name": "oil_slick",
+        "name": "oil_slick"
     },
     {
         "id": 2,
-        "name": "puncture",
+        "name": "puncture"
     },
     {
         "id": 3,
-        "name": "smart_bomb",
+        "name": "smart_bomb"
     }
 ]

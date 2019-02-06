@@ -1,15 +1,12 @@
 {
 "uuid" : "testUUID",
 "broker" : {
-	"host" : "m15.cloudmqtt.com",
-	"port" : 16876,
-	"username" : "mtjfequg",
-	"password" : "hC_j7V_hfAKE"
+	"host" : "broker.hivemq.com",
+	"port" : 1883
 },
 "paths" : {
-	"resources" : "/home/pi/Documents/pi_scalextric/pythonScripts/specialWeaponScripts",
-	"throttle" : "/home/pi/Documents/pi_scalextric/pythonScripts/throttleScripts/channel_throttle.py",
-	"sensors" : "/home/pi/Documents/pi_scalextric/pythonScripts/sensorScripts/sensors.py"
+	"resources" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
+	"sensors" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/sensorScripts/sensors.py"
 }
 
 }
