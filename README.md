@@ -106,7 +106,7 @@ To retrieve resource state
 Resource is deploying
 ```
 {
-  requested : [state]
+  state : "busy"
 }
 ```
 
@@ -114,7 +114,7 @@ Resource is deploying
 Resource is ready for deployment
 ```
 {
-  requested : [state]
+  state : "requested"
 }
 ```
 
@@ -124,7 +124,7 @@ To deploy resource
 **Format**
 
 ```
-state : "Requested"
+state : "requested"
 target : [CHANNEL_ID]
 }
 ```
