@@ -1,0 +1,439 @@
+[
+    {
+        "id": "9b717be2.b9f238",
+        "type": "tab",
+        "label": "Mqtt Test",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "26211e68.bbaf7a",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Testing All",
+        "topic": "",
+        "payload": "all",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 300,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "c52dfb6f.ec9ab",
+        "type": "mqtt out",
+        "z": "9b717be2.b9f238",
+        "name": "",
+        "topic": "",
+        "qos": "",
+        "retain": "",
+        "broker": "560ef120.86202",
+        "x": 1030,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "4d011dcf.25e0f4",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Pi State",
+        "topic": "",
+        "payload": "pi_state",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 400,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "995898e7.f1f338",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Game State",
+        "topic": "",
+        "payload": "game_state",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 230,
+        "y": 440,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "649bd4f0.0f030c",
+        "type": "function",
+        "z": "9b717be2.b9f238",
+        "name": "",
+        "func": "\nlet messages = [];\n\nif (msg.payload === \"all\" || msg.payload === \"control\" || msg.payload === \"pi_state\") {\n    \n    let request = {\n        requested : \"debug\"\n    }\n    \n    let msg = {\n        topic: \"testUUID/control/pi_state\",\n        payload: request,\n        retain : true\n    };\n    messages.push(msg);\n}\n\nif (msg.payload === \"all\" || msg.payload === \"control\" || msg.payload === \"game_state\") {\n    let msg = {\n        topic: \"testUUID/control/game_state\",\n        payload: \"Testing Game State\"\n    };\n    messages.push(msg);\n}\n\n\nif (msg.payload === \"all\" || msg.payload === \"control\" || msg.payload === \"channel\" || msg.payload === \"throttle\") {\n    \n    let msg = {\n        topic: \"testUUID/control/1/throttle\",\n        payload: {\n            set : 90\n        }\n    };\n    messages.push(msg);\n}\n\n\nif (msg.payload === \"all\" || msg.payload === \"control\" || msg.payload === \"channel\" || msg.payload === \"event\") {\n    let msg = {\n        topic: \"testUUID/control/1/event\",\n        payload: \"Testing Channel Event\"\n    };\n    messages.push(msg);\n}\n\nif (msg.payload === \"all\" || msg.payload === \"control\" || msg.payload === \"channel\" || msg.payload === \"state\") {\n    let request = {\n        state : \"requested\",\n        target : 0\n    }\n    \n    let msg = {\n        topic: \"testUUID/control/1/2/state\",\n        payload: request\n    };\n    messages.push(msg);\n}\n\n\nif (msg.payload === \"all\" || msg.payload === \"control\" || msg.payload === \"channel\" || msg.payload === \"count\") {\n    let msg = {\n        topic: \"testUUID/control/1/1/count\",\n        payload: \"Testing Resource Count\"\n    };\n    messages.push(msg);\n}\n\nif (msg.payload === \"all\" || msg.payload === \"sensors\") {\n    let msg = {\n        topic: \"testUUID/sensors\",\n        payload: \"Testing Sensors\"\n    };\n    messages.push(msg);\n}\n\n\nif (msg.payload === \"all\" || msg.payload === \"sensorId\") {\n    let msg = {\n        topic: \"testUUID/sensors/1\",\n        payload: \"Testing Specific Sensor\"\n    };\n    messages.push(msg);\n}\n\n\nif (msg.payload === \"all\" || msg.payload === \"trigger_percent\") {\n    let msg = {\n        topic: \"testUUID/sensors/1/trigger_percent\",\n        payload: \"Testing Throttle Percent\"\n    };\n    messages.push(msg);\n}\n\n\nif (msg.payload === \"all\" || msg.payload === \"resources\") {\n    let msg = {\n        topic: \"testUUID/resources\",\n        payload: \"Testing Resources\"\n    };\n    messages.push(msg);\n}\n\n\n\n\n\nreturn [messages];",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 630,
+        "y": 580,
+        "wires": [
+            [
+                "c52dfb6f.ec9ab"
+            ]
+        ]
+    },
+    {
+        "id": "5e1ada46.0a00a4",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Control",
+        "topic": "",
+        "payload": "control",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 360,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "cc246dbc.df5188",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Channel",
+        "topic": "",
+        "payload": "channel",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 500,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "ca34a664.ca505",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Throttle",
+        "topic": "",
+        "payload": "throttle",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 540,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "ba57628e.64ec5",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "State",
+        "topic": "",
+        "payload": "state",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 580,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "1fc78b42.12c18d",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Count",
+        "topic": "",
+        "payload": "count",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 620,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "df7fdb07.a578",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Event",
+        "topic": "",
+        "payload": "event",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 210,
+        "y": 660,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "de465d11.a908b",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Sensors",
+        "topic": "",
+        "payload": "sensors",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 720,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "863e45b0.42643",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Sensor Id",
+        "topic": "",
+        "payload": "sensorId",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 760,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "ea2a0bfd.ca75a8",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "Trigger Percent",
+        "topic": "",
+        "payload": "trigger_percent",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 240,
+        "y": 800,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "7aedb090.a60ac",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "resources",
+        "topic": "",
+        "payload": "resources",
+        "payloadType": "str",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 220,
+        "y": 860,
+        "wires": [
+            [
+                "649bd4f0.0f030c"
+            ]
+        ]
+    },
+    {
+        "id": "a2a821bf.53ff78",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "5% Throttle",
+        "topic": "",
+        "payload": "5",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 410,
+        "y": 980,
+        "wires": [
+            [
+                "70e2e803.efd7c"
+            ]
+        ]
+    },
+    {
+        "id": "650b09c2.6961b",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "30% Throttle",
+        "topic": "",
+        "payload": "30",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 413,
+        "y": 1041,
+        "wires": [
+            [
+                "70e2e803.efd7c"
+            ]
+        ]
+    },
+    {
+        "id": "621bdb53.ecec04",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "50% Throttle",
+        "topic": "",
+        "payload": "50",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 415,
+        "y": 1097,
+        "wires": [
+            [
+                "70e2e803.efd7c"
+            ]
+        ]
+    },
+    {
+        "id": "9bd4ce05.765068",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "100% Throttle",
+        "topic": "",
+        "payload": "100",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 413,
+        "y": 1155,
+        "wires": [
+            [
+                "70e2e803.efd7c"
+            ]
+        ]
+    },
+    {
+        "id": "70e2e803.efd7c",
+        "type": "function",
+        "z": "9b717be2.b9f238",
+        "name": "",
+        "func": "let percent = msg.payload\nlet message = {\n    topic: \"testUUID/control/0/throttle\",\n    payload: {\n        set : percent\n    }\n};\nreturn message;\n\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 650,
+        "y": 1020,
+        "wires": [
+            [
+                "c52dfb6f.ec9ab"
+            ]
+        ]
+    },
+    {
+        "id": "d5ec7cf5.010e",
+        "type": "inject",
+        "z": "9b717be2.b9f238",
+        "name": "0% Throttle",
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "",
+        "x": 410,
+        "y": 920,
+        "wires": [
+            [
+                "70e2e803.efd7c"
+            ]
+        ]
+    },
+    {
+        "id": "560ef120.86202",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "alicedigitallabs3",
+        "broker": "broker.hivemq.com",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": ""
+    }
+]
