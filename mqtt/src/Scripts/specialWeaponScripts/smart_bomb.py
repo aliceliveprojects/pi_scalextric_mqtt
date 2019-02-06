@@ -20,21 +20,8 @@ GPIO.setup(targetChannel,GPIO.OUT)
 
 p = GPIO.PWM(targetChannel, 0.5)
 
-start = time.time()
-elapsedTime = 0
 
-high = False
-
-while elapsedTime < 5:
-    if high:
-        print()
-        p.ChangeDutyCycle(random.uniform(70,100))
-        high = False
-    else:
-        p.ChangeDutyCycle(random.uniform(10,40))
-        high = True
-
-    time.sleep(1)
-    end= time.time()
-    elapsedTime = end - start
+p.ChangeDutyCycle(100)
+time.sleep(2)
+p.ChangeDutyCycle(30)
 
