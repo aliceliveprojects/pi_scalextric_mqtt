@@ -1,14 +1,14 @@
 # pi_scalextric_mqtt
 
-# Project Structure
+## Project Structure
 - [Mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt): setup a mqtt broker, python scripts or configuration files
 
 - [Node Red Flow](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/node_red_flow): node red flows
 
 ---
 
-# Topic Structure
- I recommend viewing the topic structure on mind-mup
+## Topic Structure
+I recommend viewing the topic structure on mind-mup
 
 ## {UUID}/control/game_state
 Sets or gets the game state
