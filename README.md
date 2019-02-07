@@ -15,7 +15,6 @@ Sets or gets the game state
 
 **Subscribe**: To retrieve game state
 
----
 
 **Publish**: To set game state
 
@@ -25,6 +24,7 @@ Options:
 | ------------- |:-------------:|
 | Retain        | True |
 
+---
 
 ## {UUID}/control/pi_state
 Sets or gets the pi state
@@ -55,7 +55,6 @@ State is ready for a new request
 }
 ```
 
----
 
 **Publish**: To set pi state
 
@@ -74,6 +73,7 @@ Options:
 | Retain   | True |
 
 
+---
 
 ## {UUID}/control/{channel}/throttle
 Sets or gets the channel throttle
@@ -86,7 +86,6 @@ Format:
 [throttle]
 ```
 
----
 
 **Publish**: To Set channel throttle
 
@@ -98,8 +97,12 @@ Format
 }
 ```
 
+---
+
 ## {UUID}/control/{channel}/event
 In Progress...
+
+---
 
 ## {UUID}/control/{channel}/{resourceId}/state
 Sets or gets the resource state
@@ -123,7 +126,6 @@ Resource is ready for deployment
 }
 ```
 
----
 
 **Publishing**: To deploy resource
 
@@ -135,6 +137,7 @@ target : [CHANNEL_ID]
 }
 ```
 
+---
 
 ## {UUID}/control/{channe}/{resourceId}/count
 Sets or gets the number of deployments left for a resource
@@ -147,7 +150,6 @@ Format:
 count
 ```
 
----
 
 **Publishing**: To set resource count
 
@@ -164,7 +166,7 @@ Options:
 | Retain   | True |
 
 
-
+---
 
 ## {UUID}/sensors
 To get sensor details
@@ -175,6 +177,8 @@ Format:
 
 see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#sensors
 
+---
+
 ## {UUID}/resources
 To get resource details
 
@@ -184,11 +188,14 @@ Format:
 
 see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#resources
 
+---
 
 ## {UUID}/sensors/{sensorId}
 Gets sensor events
 
 **Subscribe**: Notified when a sensor is triggered
+
+---
 
 ## {UUID}/sensors/{sensorId}/trigger_percent
 Set a trigger percent
@@ -210,7 +217,7 @@ Options:
 
 
 
----
+
 
 This is the work of [Yusof Bandar](https://github.com/YusofBandar) for [DigitalLabs@MMU](https://digitallabs.mmu.ac.uk/).
 
