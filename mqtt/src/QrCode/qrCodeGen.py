@@ -51,6 +51,9 @@ def main():
     portKey = 'port'
     if(args.websocket):
         portKey = 'websocketPort'
+        urlParams.pop('port',None)
+    else:
+        urlParams.pop('websocketPort',None)
 
     # remove ssl argument if not chosen
     if not (args.ssl):
