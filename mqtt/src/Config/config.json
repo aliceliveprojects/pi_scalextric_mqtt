@@ -1,9 +1,9 @@
 {
 "uuid" : "testUUID",
 "broker" : {
-	"host" : "broker.hivemq.com",
+	"host" : "iot.eclipse.org",
 	"port" : 1883,
-	"websocketPort" : 8000,
+	"websocketPort" : 443,
 	"ssl" : true
 }, 
 "paths" : {
