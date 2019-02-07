@@ -11,6 +11,7 @@ parser.add_argument('config',help='path to the config.json file')
 parser.add_argument('host',help='host of the single page web app')
 parser.add_argument('--filename',nargs=1,help='file name of the qr code image')
 parser.add_argument('--websocket', action='store_true',  help='uses the websocket port instead')
+parser.add_argument('--ssl',action='store_true',help='uses ssl for websocket port')
 
 
 args = parser.parse_args()
@@ -34,7 +35,6 @@ def main():
     if('host' not in config['broker']):
         raise KeyError('broker host was not found in config')
 
-    
     if(args.websocket):
         if('websocketPort' not in config['broker']):
             raise KeyError('broker websocketPort for was not found in config')
@@ -47,9 +47,14 @@ def main():
     urlParams = config['broker']
     urlParams['uuid'] = config['uuid']
 
+    # pick which port to use
     portKey = 'port'
     if(args.websocket):
         portKey = 'websocketPort'
+
+    # remove ssl argument if not chosen
+    if not (args.ssl):
+        urlParams.pop('ssl',None)
 
     # Rename keys for url paramaters
     urlParams['brokerHost'] = urlParams.pop('host')

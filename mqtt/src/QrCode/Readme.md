@@ -18,6 +18,7 @@ Optional Arguments
 | ------------- |:---------------:|
 | --filename     | file name of the qr code image (OPTIONAL)|
 | --websocket    | flag to use the websocket port (OPTIONAL)|
+| --ssl    | flag to use the ssl on websocket port (OPTIONAL)|
 
 
 
