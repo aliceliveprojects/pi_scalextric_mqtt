@@ -13,15 +13,15 @@
 ## {UUID}/control/game_state
 Sets or gets the game state
 
-### Subscribe
-To retrieve game state
+**Subscribe**: To retrieve game state
 
-### Publish
-To set game state
+**Publish**: To set game state
+
+Format:
 
 | Option      | Value  |
 | ------------- |:-------------:|
-| Retain   | True |
+| Retain        | True |
 
 
 ## {UUID}/control/pi_state
