@@ -15,6 +15,8 @@ Sets or gets the game state
 
 **Subscribe**: To retrieve game state
 
+---
+
 **Publish**: To set game state
 
 Format:
