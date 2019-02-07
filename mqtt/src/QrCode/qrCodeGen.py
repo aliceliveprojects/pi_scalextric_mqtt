@@ -9,9 +9,13 @@ import argparse
 parser = argparse.ArgumentParser(description='Generates url qr code containing single page web app domain and broker details')
 parser.add_argument('config',help='path to the config.json file')
 parser.add_argument('host',help='host of the single page web app')
-parser.add_argument('--filename',nargs='?',help='file name of the qr code image')
+parser.add_argument('--filename',nargs=1,help='file name of the qr code image')
+parser.add_argument('--websocket', action='store_true',  help='uses the websocket port instead')
+
 
 args = parser.parse_args()
+
+
 
 def main():
     DEFAULTFILENAME = 'QrCode'
@@ -30,16 +34,26 @@ def main():
     if('host' not in config['broker']):
         raise KeyError('broker host was not found in config')
 
-    if('port' not in config['broker']):
+    
+    if(args.websocket):
+        if('websocketPort' not in config['broker']):
+            raise KeyError('broker websocketPort for was not found in config')
+    elif('port' not in config['broker']):
         raise KeyError('boker port was not found in config')
+
+    
 
 
     urlParams = config['broker']
     urlParams['uuid'] = config['uuid']
 
+    portKey = 'port'
+    if(args.websocket):
+        portKey = 'websocketPort'
+
     # Rename keys for url paramaters
     urlParams['brokerHost'] = urlParams.pop('host')
-    urlParams['brokerPort'] = urlParams.pop('port')
+    urlParams['brokerPort'] = urlParams.pop(portKey)
 
     # Params url encoded
     encodedUrlParams = urllib.urlencode(urlParams)

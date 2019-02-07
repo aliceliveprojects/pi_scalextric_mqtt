@@ -2,7 +2,8 @@
 "uuid" : "testUUID",
 "broker" : {
 	"host" : "broker.hivemq.com",
-	"port" : 1883
+	"port" : 1883,
+	"websocketPort" : 8000
 },
 "paths" : {
 	"resources" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
