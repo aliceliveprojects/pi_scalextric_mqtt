@@ -23,7 +23,7 @@ Optional Arguments
 
 To run : 
 
-```python qrCodeGen.py [CONFIG] [HOST] --filename [FILENAME]```
+```python qrCodeGen.py [CONFIG] [HOST]```
 
 For Help :
 

@@ -1,36 +1,37 @@
 # pi_scalextric_mqtt
 
-### Project Structure
-- Check out the [mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt) folder if you want to setup a mqtt broker, python scripts or configuration files
+## Project Structure
+- [Mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt): setup a mqtt broker, python scripts or configuration files
 
-- Check out the [node_red_flow](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/node_red_flow) folder for the node red flow
+- [Node Red Flow](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/node_red_flow): node red flows
 
+---
 
-
-# Topic Structure
- I recommend viewing the topic structure on mind-mup
+## Topic Structure
+I recommend viewing the topic structure on mind-mup
 
 ## {UUID}/control/game_state
 Sets or gets the game state
 
-### Subscribe
-To retrieve game state
+**Subscribe**: To retrieve game state
 
-### Publish
-To set game state
+
+**Publish**: To set game state
+
+Options:
 
 | Option      | Value  |
 | ------------- |:-------------:|
-| Retain   | True |
+| Retain        | True |
 
+---
 
 ## {UUID}/control/pi_state
 Sets or gets the pi state
 
-### Subscribe
-To retrieve pi state
+**Subscribe**: To retrieve pi state
 
-**Format**
+Format:
 
 New state has been requested
 ```
@@ -42,7 +43,7 @@ New state has been requested
 State is in the process of execution
 ```
 {
-  requested : [state]
+  busy : [state]
 }
 ```
 
@@ -50,18 +51,14 @@ State is in the process of execution
 State is ready for a new request
 ```
 {
-  requested : [state]
+  done : [state]
 }
 ```
 
-### Publish
-To set pi state
 
-| Option      | Value  |
-| ------------- |:-------------:|
-| Retain   | True |
+**Publish**: To set pi state
 
-**Format**
+Format:
 
 ```
 {
@@ -69,22 +66,30 @@ To set pi state
 }
 ```
 
+Options:
+
+| Option      | Value  |
+| ------------- |:-------------:|
+| Retain   | True |
+
+
+---
+
 ## {UUID}/control/{channel}/throttle
 Sets or gets the channel throttle
 
-### Subscribe
-To retrieve channel throttle
+**Subscribe**:To retrieve channel throttle
 
-**Format**
+Format:
 
 ```
 [throttle]
 ```
 
-### Publish
-To Set channel throttle
 
-**Format**
+**Publish**: To Set channel throttle
+
+Format
 
 ```
 {
@@ -92,16 +97,19 @@ To Set channel throttle
 }
 ```
 
+---
+
 ## {UUID}/control/{channel}/event
 In Progress...
+
+---
 
 ## {UUID}/control/{channel}/{resourceId}/state
 Sets or gets the resource state
 
-### Subscribe 
-To retrieve resource state
+**Subscribe**:To retrieve resource state
 
-**Format**
+Format:
 
 Resource is deploying
 ```
@@ -114,14 +122,14 @@ Resource is deploying
 Resource is ready for deployment
 ```
 {
-  state : "requested"
+  state : "ready"
 }
 ```
 
-### Publishing
-To deploy resource
 
-**Format**
+**Publishing**: To deploy resource
+
+Format:
 
 ```
 state : "requested"
@@ -129,78 +137,87 @@ target : [CHANNEL_ID]
 }
 ```
 
+---
 
 ## {UUID}/control/{channe}/{resourceId}/count
 Sets or gets the number of deployments left for a resource
 
-### Subscribe
-To retireve resource count
+**Subscribe**: To retireve resource count
 
-**Format**
+Format:
 
 ```
 count
 ```
 
-### Publishing
-To set resource count
 
-| Option      | Value  |
-| ------------- |:-------------:|
-| Retain   | True |
+**Publishing**: To set resource count
 
-
-**Format**
+Format:
 
 ```
 count
 ````
 
-## {UUID}/sensors
-To get sensor details
-
-### Subscribe
-To retireve all sensor details
-
-**Format**
-
-see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#sensors
-
-## {UUID}/resources
-To get resource details
-
-### Subscribe
-To retrieve all resource details
-
-**Format**
-
-see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#resources
-
-
-## {UUID}/sensors/{sensorId}
-Gets sensor events
-
-### Subscribed
-Notified when a sensor is triggered
-
-## {UUID}/sensors/{sensorId}/trigger_percent
-Set a trigger percent
-
-### Publish
-Set a new trigger percent, this does not update the [config](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config) file
+Options:
 
 | Option      | Value  |
 | ------------- |:-------------:|
 | Retain   | True |
 
 
-**Format**
+---
+
+## {UUID}/sensors
+To get sensor details
+
+**Subscribe**: To retireve all sensor details
+
+Format:
+
+see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#sensors
+
+---
+
+## {UUID}/resources
+To get resource details
+
+**Subscribe**: To retrieve all resource details
+
+Format:
+
+see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#resources
+
+---
+
+## {UUID}/sensors/{sensorId}
+Gets sensor events
+
+**Subscribe**: Notified when a sensor is triggered
+
+---
+
+## {UUID}/sensors/{sensorId}/trigger_percent
+Set a trigger percent
+
+**Publish**: Sets a new trigger percent, this does not update the [config](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config) file
+
+Format:
 
 ```
 trigger_percent
 ```
 
+Options:
+
+| Option      | Value  |
+| ------------- |:-------------:|
+| Retain   | True |
+
+
 ---
+
+
 
 This is the work of [Yusof Bandar](https://github.com/YusofBandar) for [DigitalLabs@MMU](https://digitallabs.mmu.ac.uk/).
 
