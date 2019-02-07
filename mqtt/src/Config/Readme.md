@@ -19,6 +19,7 @@ There are three configuration files:
 | ----------- |:-------------:|
 | host        | broker host |
 | port        | broker port |
+| port        | broker port (OPTIONAL) |
 | username    | broker username (OPTIONAL) |
 | password    | broker password (OPTIONAL) |
 
@@ -34,6 +35,7 @@ There are three configuration files:
     "broker" : {
         "host"
         "port"
+        "websocketPort"
         "username"
         "password"
     },
