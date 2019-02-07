@@ -19,7 +19,7 @@ Sets or gets the game state
 
 **Publish**: To set game state
 
-Format:
+Options:
 
 | Option      | Value  |
 | ------------- |:-------------:|
@@ -29,10 +29,9 @@ Format:
 ## {UUID}/control/pi_state
 Sets or gets the pi state
 
-### Subscribe
-To retrieve pi state
+**Subscribe**: To retrieve pi state
 
-**Format**
+Format:
 
 New state has been requested
 ```
@@ -44,7 +43,7 @@ New state has been requested
 State is in the process of execution
 ```
 {
-  requested : [state]
+  busy : [state]
 }
 ```
 
@@ -52,18 +51,15 @@ State is in the process of execution
 State is ready for a new request
 ```
 {
-  requested : [state]
+  done : [state]
 }
 ```
 
-### Publish
-To set pi state
+---
 
-| Option      | Value  |
-| ------------- |:-------------:|
-| Retain   | True |
+**Publish**: To set pi state
 
-**Format**
+Format:
 
 ```
 {
@@ -71,22 +67,30 @@ To set pi state
 }
 ```
 
+Options:
+
+| Option      | Value  |
+| ------------- |:-------------:|
+| Retain   | True |
+
+
+
 ## {UUID}/control/{channel}/throttle
 Sets or gets the channel throttle
 
-### Subscribe
-To retrieve channel throttle
+**Subscribe**:To retrieve channel throttle
 
-**Format**
+Format:
 
 ```
 [throttle]
 ```
 
-### Publish
-To Set channel throttle
+---
 
-**Format**
+**Publish**: To Set channel throttle
+
+Format
 
 ```
 {
@@ -100,10 +104,9 @@ In Progress...
 ## {UUID}/control/{channel}/{resourceId}/state
 Sets or gets the resource state
 
-### Subscribe 
-To retrieve resource state
+**Subscribe**:To retrieve resource state
 
-**Format**
+Format:
 
 Resource is deploying
 ```
@@ -116,14 +119,15 @@ Resource is deploying
 Resource is ready for deployment
 ```
 {
-  state : "requested"
+  state : "ready"
 }
 ```
 
-### Publishing
-To deploy resource
+---
 
-**Format**
+**Publishing**: To deploy resource
+
+Format:
 
 ```
 state : "requested"
@@ -135,46 +139,48 @@ target : [CHANNEL_ID]
 ## {UUID}/control/{channe}/{resourceId}/count
 Sets or gets the number of deployments left for a resource
 
-### Subscribe
-To retireve resource count
+**Subscribe**: To retireve resource count
 
-**Format**
+Format:
 
 ```
 count
 ```
 
-### Publishing
-To set resource count
+---
+
+**Publishing**: To set resource count
+
+Format:
+
+```
+count
+````
+
+Options:
 
 | Option      | Value  |
 | ------------- |:-------------:|
 | Retain   | True |
 
 
-**Format**
 
-```
-count
-````
 
 ## {UUID}/sensors
 To get sensor details
 
-### Subscribe
-To retireve all sensor details
+**Subscribe**: To retireve all sensor details
 
-**Format**
+Format:
 
 see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#sensors
 
 ## {UUID}/resources
 To get resource details
 
-### Subscribe
-To retrieve all resource details
+**Subscribe**: To retrieve all resource details
 
-**Format**
+Format:
 
 see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config#resources
 
@@ -182,25 +188,27 @@ see https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src
 ## {UUID}/sensors/{sensorId}
 Gets sensor events
 
-### Subscribed
-Notified when a sensor is triggered
+**Subscribe**: Notified when a sensor is triggered
 
 ## {UUID}/sensors/{sensorId}/trigger_percent
 Set a trigger percent
 
-### Publish
-Set a new trigger percent, this does not update the [config](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config) file
+**Publish**: Sets a new trigger percent, this does not update the [config](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config) file
+
+Format:
+
+```
+trigger_percent
+```
+
+Options:
 
 | Option      | Value  |
 | ------------- |:-------------:|
 | Retain   | True |
 
 
-**Format**
 
-```
-trigger_percent
-```
 
 ---
 
