@@ -45,6 +45,8 @@ For Help :
 ## Sensor Scripts
 Each sensor script must contain three functions
 
+---
+
 **changeTriggerPercent**
 
 Must update the trigger percentage
