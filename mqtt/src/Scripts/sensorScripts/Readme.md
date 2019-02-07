@@ -59,11 +59,13 @@ Must update the trigger percentage
 ---
 
 **stopSensor**
+
 Must stop sensor 
 
 ---
 
-startSensor
+**startSensor**
+
 Must start the sensor and call callback when triggered
 
 **Parameters**
