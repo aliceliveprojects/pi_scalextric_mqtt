@@ -3,8 +3,9 @@
 "broker" : {
 	"host" : "broker.hivemq.com",
 	"port" : 1883,
-	"websocketPort" : 8000
-},
+	"websocketPort" : 8000,
+	"ssl" : true
+}, 
 "paths" : {
 	"resources" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
 	"sensors" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/sensorScripts/sensors.py"

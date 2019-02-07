@@ -22,6 +22,7 @@ There are three configuration files:
 | port        | broker websocket port (OPTIONAL) |
 | username    | broker username (OPTIONAL) |
 | password    | broker password (OPTIONAL) |
+| ssl         | true to use ssl (OPTIONAL) |
 
 | Path Details     | Description  |
 | ----------- |:-------------:|
@@ -38,10 +39,11 @@ There are three configuration files:
         "websocketPort"
         "username"
         "password"
+        "ssl"
     },
     "paths":{
         "resources"
-        "sesnors
+        "sensors
     }
 
 }
