@@ -4,7 +4,7 @@
 Within the src folder you will find
  - [Config](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Config): example config files and documentation
  - [QrCode](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/QrCode): qr-generation code and documentation
- - [Scripts/SensorScripts](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Scripts/sensorScripts) sensors scripts and documentation
+ - [Scripts/SensorScripts](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt/src/Scripts/sensorScripts): sensors scripts and documentation
 
 
 ---
