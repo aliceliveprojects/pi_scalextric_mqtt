@@ -1,4 +1,10 @@
 # pi_scalextric_mqtt
+STOP PRESS - we have now seen 2 occasions where the Grove Pi sensor board refuses to read sensor values. This is accompanied by the LEF on the board, marked 'RST' turning RED.
+To reset the board and clear this error, execute the following from the command line:
+
+```bash
+avrdude -c gpio -p m328p
+```
 
 ## Project Structure
 - [Mqtt](https://github.com/aliceliveprojects/pi_scalextric_mqtt/tree/master/mqtt): setup a mqtt broker, python scripts or configuration files
