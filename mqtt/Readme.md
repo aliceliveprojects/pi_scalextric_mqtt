@@ -37,6 +37,12 @@ By default Mosquitto Broker 1.4 it not configured with websockets. Follow this t
 To setup a Mqtt Broker on Heroku first create a new application. Within the application panel navigate to the Resources tab. Within the resources tab under the Add-ons section search for CloudMQTT installing the free tier.
 Once CloudMQTT is installed click on the add-on to view broker details. 
 
+### Public Broker
+
+There are many public brokers around. They tend to be a blit flaky and break often, but even when located on th other side of the planet, their performance is good. Latency is very low indeed.
+If you're planning on using GitHub to host your SPWA, then your broker must support WSS (secure web sockets). You can't use WS(unsecured) SPWA will be served over HTTPS, and shifting to WS represents a security risk and will be blocked by your browser.
+
+We have found https://test.mosquitto.org/ to be the most reliable public service.
 
 
 ## Node Red
