@@ -22,6 +22,6 @@ p = GPIO.PWM(targetChannel, 50)
 p.start(0)
 
 p.ChangeDutyCycle(100)
-time.sleep(2)
-p.ChangeDutyCycle(30)
+time.sleep(5)
+p.ChangeDutyCycle(60)
 

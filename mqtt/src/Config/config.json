@@ -1,11 +1,11 @@
 {
 "uuid" : "testUUID",
 "broker" : {
-	"host" : "iot.eclipse.org",
+	"host" : "test.mosquitto.org",
 	"port" : 1883,
-	"websocketPort" : 443,
+	"websocketPort":8081,
 	"ssl" : true
-}, 
+},
 "paths" : {
 	"resources" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
 	"sensors" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/sensorScripts/sensors.py"

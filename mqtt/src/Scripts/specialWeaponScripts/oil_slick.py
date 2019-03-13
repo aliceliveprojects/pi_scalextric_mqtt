@@ -25,7 +25,7 @@ elapsedTime = 0
 
 high = False
 
-while elapsedTime < 5:
+while elapsedTime < 7:
     if high:
         print()
         p.ChangeDutyCycle(random.uniform(70,100))

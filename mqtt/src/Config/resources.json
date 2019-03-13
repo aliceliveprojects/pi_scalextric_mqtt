@@ -1,14 +1,17 @@
 [
     {
         "id": 1,
-        "name": "oil_slick"
+        "name": "oil_slick",
+	"systemResource" : "throttle"
     },
     {
         "id": 2,
-        "name": "puncture"
+        "name": "puncture",
+        "systemResource" : "throttle"
     },
     {
         "id": 3,
-        "name": "smart_bomb"
+        "name": "smart_bomb",
+        "systemResource" : "throttle"
     }
 ]
