@@ -28,9 +28,10 @@ def stopSensor():
     global stop
     stop = True
 
-def startSensor(triggerPercent,callback):
+def startSensor(triggerPercent,callback, callbackId):
     global threshold
     threshold = int(triggerPercent)
+    id = int(callbackId)
     
     tiggered = False
     while not stop:

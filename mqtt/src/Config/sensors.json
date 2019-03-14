@@ -2,11 +2,25 @@
 {
 "id" : 0,
 "name" : "light",
-"default_trigger" :  300 
+"default_trigger" :  300, 
+"enabled" : false
 },
 {
 "id" : 1,
 "name" : "sound",
-"default_trigger" : 20
+"default_trigger" : 20,
+"enabled" : false
+},
+{
+"id" : 2,
+"name" : "lap_chan_0",
+"default_trigger" :  1,
+"enabled" : true 
+},
+{
+"id" : 3,
+"name" : "lap_chan_1",
+"default_trigger" : 1,
+"enabled" : true
 }
 ]

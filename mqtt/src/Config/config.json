@@ -7,8 +7,8 @@
 	"ssl" : true
 },
 "paths" : {
-	"resources" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
-	"sensors" : "/home/pi/Documents/pi_scalextric/pi_scalextric_mqtt/mqtt/src/Scripts/sensorScripts/sensors.py"
+	"resources" : "/home/pi/github/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
+	"sensors" : "/home/pi/github/pi_scalextric_mqtt/mqtt/src/Scripts/sensorScripts/sensors.py"
 }
 
 }

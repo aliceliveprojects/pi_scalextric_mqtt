@@ -31,17 +31,32 @@ def stopSensor(sensors):
 def startSensor(sensor):
     triggerPercent = 0
     
+    name = "un-named"
+    if 'name' in sensor:
+        name = sensor['name']
+        
     if 'trigger' in sensor:
         triggerPercent = sensor['trigger']
     else:
         triggerPercent = sensor['default_trigger']
     
-    sensor = importlib.import_module(sensor['name'])
-    thread = threading.Thread(target=sensor.startSensor, args=(triggerPercent,sensorCallback))
-    sensorThreads.append(sensor)
-    thread.start()
+    if 'id' in sensor:
+        callbackId = sensor['id']
+    else:
+        callbackId = 0
     
-  
+    enabled = False
+
+    if 'enabled' in sensor:
+        enabled = sensor['enabled']
+
+    if enabled != False:
+        print("Enabling sensor: ", sensor['name'])
+        sensor = importlib.import_module(sensor['name'])
+        thread = threading.Thread(target=sensor.startSensor, args=(triggerPercent,sensorCallback, callbackId))
+        sensorThreads.append(sensor)
+        thread.start()
+    
 
 
 # Define Command Line Arguments

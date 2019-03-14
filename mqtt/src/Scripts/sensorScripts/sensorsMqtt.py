@@ -14,6 +14,7 @@ client = None
 
 def on_connect(client, userdata, flags, rc):
     print("connect")
+    print("rc = ",rc)
     if(rc == 0):
         print("connected to broker")
         
@@ -22,7 +23,8 @@ def on_connect(client, userdata, flags, rc):
         client.subscribe(UUID + '/sensors')
         # unsubscribe
         client.unsubscribe(UUID + '/sensors')
-
+    else:
+        print("connection returned rc of: " + rc)
 
 def sensorTriggerPercentSub(client, userdata, message):
     global sensorDetails, recievedTriggers
@@ -72,7 +74,9 @@ def connect(piUUID, broker_address, port, username='None', password='None'):
     client = mqttClient.Client(client_id="", clean_session=True)
 
     if username != 'None':
+        print("username: ", username)
         if password != 'None':
+            print("password", password)
             client.username_pw_set(username, password=password)
         else:
             client.username_pw_set(username)
