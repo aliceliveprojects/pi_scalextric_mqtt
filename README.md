@@ -201,6 +201,17 @@ Gets sensor events
 
 **Subscribe**: Notified when a sensor is triggered
 
+Currently, we support the following sensors:
+
+|channel|Sensor|
+|-|-|
+|1| Grove Light Sensor |
+|2| Grove Sound Sensor |
+|3| [Grove IR Reflective Sensor](https://www.seeedstudio.com/Grove-Infrared-Reflective-Sensor-v1-2-p-2791.html) |
+|4| [Grove IR Reflective Sensor](https://www.seeedstudio.com/Grove-Infrared-Reflective-Sensor-v1-2-p-2791.html) |
+
+The IR reflective sensors  can be mounted trackside and publish an output when the car goes past. They can be used as lap counters, or to sense when both cars are at the start line.
+
 ---
 
 ## {UUID}/sensors/{sensorId}/trigger_percent
