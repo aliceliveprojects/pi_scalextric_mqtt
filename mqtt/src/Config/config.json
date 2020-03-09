@@ -1,14 +1,13 @@
 {
 "uuid" : "testUUID",
 "broker" : {
-	"host" : "test.mosquitto.org",
-	"port" : 1883,
-	"websocketPort":8081,
+	"host" : "thedigitallabsmqtt.herokuapp.com",
+	"port" : 443,
 	"ssl" : true
 },
 "paths" : {
-	"resources" : "/home/pi/github/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
-	"sensors" : "/home/pi/github/pi_scalextric_mqtt/mqtt/src/Scripts/sensorScripts/sensors.py"
+	"resources" : "/home/pi/Documents/github/pi_scalextric_mqtt/pi_scalextric_mqtt/mqtt/src/Scripts/specialWeaponScripts/",
+	"sensors" : "/home/pi/Documents/github/pi_scalextric_mqtt/pi_scalextric_mqtt/mqtt/src/Scripts/sensorScripts/sensors.py"
 }
 
 }

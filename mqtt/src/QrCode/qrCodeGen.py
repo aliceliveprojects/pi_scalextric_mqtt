@@ -35,25 +35,11 @@ def main():
     if('host' not in config['broker']):
         raise KeyError('broker host was not found in config')
 
-    if(args.websocket):
-        if('websocketPort' not in config['broker']):
-            raise KeyError('broker websocketPort for was not found in config')
-    elif('port' not in config['broker']):
-        raise KeyError('boker port was not found in config')
-
-    
-
-
     urlParams = config['broker']
     urlParams['uuid'] = config['uuid']
 
-    # pick which port to use
+
     portKey = 'port'
-    if(args.websocket):
-        portKey = 'websocketPort'
-        urlParams.pop('port',None)
-    else:
-        urlParams.pop('websocketPort',None)
 
     # remove ssl argument if not chosen
     if not (args.ssl):
