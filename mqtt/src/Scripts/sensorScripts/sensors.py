@@ -11,7 +11,7 @@ import threading, time
 sensorThreads= []
 
 def sensorCallback(id,percent):
-    print("H")
+    print(id)
     sensorsMqtt.publishSensorEvent(id)
     
 
@@ -66,7 +66,6 @@ parser.add_argument('broker_address', help='Broker address, not including port e
 parser.add_argument('broker_port',help='Port for broker',type=int)
 parser.add_argument('--username',nargs='?', help='Username for broker (username must not be "None")')
 parser.add_argument('--password',nargs='?', help='Password for broker (password must not be "None")')
-
 args = parser.parse_args()
 
 
@@ -87,6 +86,8 @@ def execute():
 def main():
     try:
         execute()
+    except Exception as e:
+         print(e)
     finally:
         stopSensor(sensorThreads)
         sensorsMqtt.disconnect()

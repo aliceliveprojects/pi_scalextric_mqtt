@@ -71,8 +71,10 @@ def connect(piUUID, broker_address, port, username='None', password='None'):
     global UUID,client
     UUID = piUUID
 
-    client = mqttClient.Client(client_id="", clean_session=True)
+    client = mqttClient.Client(client_id="", clean_session=True, transport="websockets")
 
+    client.tls_set() 
+    
     if username != 'None':
         print("username: ", username)
         if password != 'None':
@@ -90,9 +92,9 @@ def connect(piUUID, broker_address, port, username='None', password='None'):
     
 
 def publishSensorEvent(sensorId):
-        topic = UUID + '/sensors/' + str(sensorId)
-        client.publish(topic)
-        client.loop()
+    topic = UUID + '/sensors/' + str(sensorId)
+    client.publish(topic)
+    client.loop()
 
 def disconnect():
-        client.disconnect()
+    client.disconnect()
